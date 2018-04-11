@@ -1,4 +1,4 @@
-export const APOLLOMAPPING_BRIGHT_STYLE = {
+{
     "id": "apollomapping-bright",
     "version": 8,
     "name": "OpenStreetMap Vector Bright",
@@ -586,8 +586,11 @@ export const APOLLOMAPPING_BRIGHT_STYLE = {
                 "visibility": "none"
             },
             "paint": {
-                "text-color": "#384646",
-                "text-halo-color": "#1f66ff"
+                "text-color": "#FFF",
+                "text-halo-color": "rgba(164, 2, 164, 1)",
+                "text-halo-width": 1,
+                "text-halo-blur": 1,
+                "text-opacity": 1
             }
         },
         {
@@ -799,7 +802,7 @@ export const APOLLOMAPPING_BRIGHT_STYLE = {
             ],
             "layout": {
                 "text-field": "{ref}",
-                "text-size": 12,
+                "text-size": 13,
                 "text-font": [
                     "Roboto Bold"
                 ],
@@ -807,10 +810,10 @@ export const APOLLOMAPPING_BRIGHT_STYLE = {
                 "symbol-spacing": 1000
             },
             "paint": {
-                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-color": "#FFF",
+                "text-halo-color": "rgba(164, 2, 164, 1)",
                 "text-halo-width": 1,
-                "text-color": "rgba(0, 0, 0, 1)",
-                "text-halo-blur": 0,
+                "text-halo-blur": 1,
                 "text-opacity": 1
             }
         },
@@ -938,4 +941,4 @@ export const APOLLOMAPPING_BRIGHT_STYLE = {
             }
         }
     ]
-};
+}

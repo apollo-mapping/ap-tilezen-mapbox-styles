@@ -63,3 +63,4 @@ typings/
 /package-lock.json
 /build
 /temp
+/lib
