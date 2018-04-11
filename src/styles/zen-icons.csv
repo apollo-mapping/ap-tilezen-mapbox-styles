@@ -1,0 +1,3 @@
+parking,#2B8255
+bicycle-share,#2B8255
+#have to keep last line or it bash script dicks up reading csv file

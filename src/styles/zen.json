@@ -1,7 +1,7 @@
 {
-    "id": "apollomapping-bright",
+    "id": "zen-osm",
     "version": 8,
-    "name": "OpenStreetMap Vector Bright",
+    "name": "Zen (OSM)",
     "metadata": {},
     "sources": {
         "osm": {
@@ -11,29 +11,28 @@
             ]
         }
     },
-    "sprite": "{resource_url}/sprites/apollomapping-bright-icons",
+    "sprite": "{resource_url}/sprites/zen-icons",
     "glyphs": "{resource_url}/tile_fonts/{fontstack}/{range}.pbf",
     "layers": [
         {
             "id": "background",
             "type": "background",
             "paint": {
-                "background-color": "rgba(255, 255, 255, 1)",
-                "background-opacity": 1
+                "background-color": "#ededed"
             }
         },
         {
             "id": "water-line",
-            "type": "line",
             "source": "osm",
             "source-layer": "water",
+            "type": "line",
             "filter": [
                 "==",
                 "$type",
                 "LineString"
             ],
             "paint": {
-                "line-color": "rgba(177, 233, 236, 1)",
+                "line-color": "#7acad0",
                 "line-width": {
                     "base": 1.2,
                     "stops": [
@@ -51,18 +50,16 @@
         },
         {
             "id": "water-polygon",
-            "type": "fill",
             "source": "osm",
             "source-layer": "water",
+            "type": "fill",
             "filter": [
                 "==",
                 "$type",
                 "Polygon"
             ],
             "paint": {
-                "fill-color": "rgba(70, 73, 135, 0.6)",
-                "fill-outline-color": "rgba(71, 71, 121, 1)",
-                "fill-opacity": 1
+                "fill-color": "#7acad0"
             }
         },
         {
@@ -70,36 +67,33 @@
             "type": "fill",
             "source": "osm",
             "source-layer": "landuse",
+            "min-zoom": 6,
             "filter": [
-                "all",
-                [
-                    "in",
-                    "kind",
-                    "park",
-                    "national_park",
-                    "forest",
-                    "garden",
-                    "grass",
-                    "farm",
-                    "meadow",
-                    "playground",
-                    "golf_course",
-                    "wetland",
-                    "nature_reserve",
-                    "wood",
-                    "cemetery"
-                ]
+                "in",
+                "kind",
+                "park",
+                "forest",
+                "garden",
+                "grass",
+                "farm",
+                "meadow",
+                "playground",
+                "golf_course",
+                "nature_reserve",
+                "wetland",
+                "wood",
+                "cemetery"
             ],
             "paint": {
-                "fill-color": "rgba(131, 234, 117, 0.75)"
-            },
-            "min-zoom": 6
+                "fill-color": "#c2cd44"
+            }
         },
         {
             "id": "river",
-            "type": "line",
             "source": "osm",
             "source-layer": "water",
+            "type": "line",
+            "min-zoom": 6,
             "filter": [
                 "all",
                 [
@@ -115,7 +109,7 @@
             ],
             "layout": {},
             "paint": {
-                "line-color": "rgba(177, 233, 236, 1)",
+                "line-color": "#7acad0",
                 "line-width": {
                     "base": 1.2,
                     "stops": [
@@ -129,14 +123,14 @@
                         ]
                     ]
                 }
-            },
-            "min-zoom": 6
+            }
         },
         {
             "id": "stream-etc",
-            "type": "line",
             "source": "osm",
             "source-layer": "water",
+            "type": "line",
+            "min-zoom": 11,
             "filter": [
                 "all",
                 [
@@ -153,7 +147,7 @@
             ],
             "layout": {},
             "paint": {
-                "line-color": "rgba(177, 233, 236, 1)",
+                "line-color": "#7acad0",
                 "line-width": {
                     "base": 1.4,
                     "stops": [
@@ -167,14 +161,13 @@
                         ]
                     ]
                 }
-            },
-            "min-zoom": 11
+            }
         },
         {
             "id": "country-boundary",
-            "type": "line",
             "source": "osm",
             "source-layer": "boundaries",
+            "type": "line",
             "filter": [
                 "==",
                 "kind_detail",
@@ -203,18 +196,18 @@
         },
         {
             "id": "state-boundary",
-            "type": "line",
             "source": "osm",
             "source-layer": "boundaries",
+            "type": "line",
             "filter": [
                 "==",
                 "kind_detail",
                 "4"
             ],
+            "max-zoom": 17,
             "layout": {
                 "line-cap": "round",
-                "line-join": "round",
-                "visibility": "visible"
+                "line-join": "round"
             },
             "paint": {
                 "line-color": "#cacecc",
@@ -231,32 +224,31 @@
                         ]
                     ]
                 }
-            },
-            "max-zoom": 17
+            }
         },
         {
             "id": "subways",
-            "type": "line",
             "source": "osm",
             "source-layer": "roads",
-            "filter": [
-                "==",
-                "railway",
-                "subway"
-            ],
+            "type": "line",
             "paint": {
                 "line-color": "#ef7369",
                 "line-dasharray": [
                     2,
                     1
                 ]
-            }
+            },
+            "filter": [
+                "==",
+                "railway",
+                "subway"
+            ]
         },
         {
             "id": "link-tunnel",
-            "type": "line",
             "source": "osm",
             "source-layer": "roads",
+            "type": "line",
             "filter": [
                 "any",
                 [
@@ -293,15 +285,15 @@
             "source": "osm",
             "source-layer": "buildings",
             "paint": {
-                "fill-outline-color": "rgba(218, 215, 184, 1)",
-                "fill-color": "rgba(226, 218, 193, 1)"
+                "fill-outline-color": "#afd3d3",
+                "fill-color": "#ededed"
             }
         },
         {
             "id": "road",
-            "type": "line",
             "source": "osm",
             "source-layer": "roads",
+            "type": "line",
             "filter": [
                 "any",
                 [
@@ -320,7 +312,7 @@
                 "line-cap": "round"
             },
             "paint": {
-                "line-color": "rgba(228, 207, 223, 1)",
+                "line-color": "#c0c4c2",
                 "line-width": {
                     "base": 1.55,
                     "stops": [
@@ -338,9 +330,9 @@
         },
         {
             "id": "link-bridge",
-            "type": "line",
             "source": "osm",
             "source-layer": "roads",
+            "type": "line",
             "filter": [
                 "any",
                 [
@@ -381,9 +373,10 @@
         },
         {
             "id": "highway",
-            "type": "line",
             "source": "osm",
             "source-layer": "roads",
+            "type": "line",
+            "line-join": "round",
             "filter": [
                 "==",
                 "kind",
@@ -394,7 +387,7 @@
                 "line-cap": "round"
             },
             "paint": {
-                "line-color": "rgba(164, 2, 164, 1)",
+                "line-color": "#5d6765",
                 "line-width": {
                     "base": 1.55,
                     "stops": [
@@ -412,14 +405,15 @@
                         ]
                     ]
                 }
-            },
-            "line-join": "round"
+            }
         },
         {
             "id": "path",
-            "type": "line",
             "source": "osm",
             "source-layer": "roads",
+            "type": "line",
+            "line-join": "round",
+            "line-cap": "round",
             "filter": [
                 "==",
                 "kind",
@@ -429,6 +423,7 @@
                 "line-join": "round",
                 "line-cap": "round"
             },
+            "min-zoom": 12,
             "paint": {
                 "line-color": "#5d6765",
                 "line-width": {
@@ -448,156 +443,15 @@
                     2,
                     2
                 ]
-            },
-            "line-join": "round",
-            "line-cap": "round",
-            "min-zoom": 12
-        },
-        {
-            "id": "aux_roads",
-            "type": "line",
-            "source": "osm",
-            "source-layer": "roads",
-            "filter": [
-                "all",
-                [
-                    "==",
-                    "$type",
-                    "LineString"
-                ],
-                [
-                    "==",
-                    "kind",
-                    "major_road"
-                ]
-            ],
-            "paint": {
-                "line-color": "rgba(173, 130, 197, 1)",
-                "line-width": 2
-            }
-        },
-        {
-            "id": "National_Park_Color",
-            "type": "fill",
-            "source": "osm",
-            "source-layer": "landuse",
-            "maxzoom": 24,
-            "filter": [
-                "all",
-                [
-                    "==",
-                    "kind",
-                    "national_park"
-                ]
-            ],
-            "layout": {},
-            "paint": {
-                "fill-color": "rgba(99, 187, 86, 0.75)"
-            }
-        },
-        {
-            "id": "state-label",
-            "type": "symbol",
-            "source": "osm",
-            "source-layer": "places",
-            "minzoom": 3,
-            "maxzoom": 5,
-            "filter": [
-                "all",
-                [
-                    "==",
-                    "$type",
-                    "Point"
-                ],
-                [
-                    "==",
-                    "kind",
-                    "region"
-                ]
-            ],
-            "layout": {
-                "text-font": [
-                    "Roboto Bold Italic"
-                ],
-                "text-field": "{name}",
-                "text-size": 18
-            },
-            "paint": {
-                "text-color": "rgba(108, 108, 116, 1)",
-                "text-halo-color": "rgba(52, 51, 51, 0.5)"
-            }
-        },
-        {
-            "id": "roads-label",
-            "type": "symbol",
-            "source": "osm",
-            "source-layer": "roads",
-            "filter": [
-                "all",
-                [
-                    "==",
-                    "$type",
-                    "LineString"
-                ],
-                [
-                    "in",
-                    "kind",
-                    "minor_road"
-                ]
-            ],
-            "layout": {
-                "symbol-placement": "line",
-                "text-font": [
-                    "Roboto Regular"
-                ],
-                "text-field": "{name}",
-                "text-size": 12
-            },
-            "paint": {
-                "text-color": "rgba(37, 40, 40, 1)",
-                "text-halo-color": "rgba(135, 139, 145, 1)"
-            }
-        },
-        {
-            "id": "highway-label",
-            "type": "symbol",
-            "source": "osm",
-            "source-layer": "roads",
-            "filter": [
-                "all",
-                [
-                    "==",
-                    "$type",
-                    "LineString"
-                ],
-                [
-                    "in",
-                    "kind",
-                    "highway"
-                ]
-            ],
-            "layout": {
-                "symbol-placement": "line",
-                "text-font": [
-                    "Roboto Bold"
-                ],
-                "text-field": "{name}",
-                "text-size": 16,
-                "visibility": "none"
-            },
-            "paint": {
-                "text-color": "#FFF",
-                "text-halo-color": "rgba(164, 2, 164, 1)",
-                "text-halo-width": 1,
-                "text-halo-blur": 1,
-                "text-opacity": 1
             }
         },
         {
             "id": "ocean-label",
-            "type": "symbol",
             "source": "osm",
             "source-layer": "places",
+            "type": "symbol",
+            "min-zoom": 2,
+            "max-zoom": 6,
             "filter": [
                 "==",
                 "kind",
@@ -626,41 +480,45 @@
             "paint": {
                 "text-color": "#ededed",
                 "text-halo-color": "#000"
-            },
-            "min-zoom": 2,
-            "max-zoom": 6
+            }
         },
         {
-            "id": "national_park_labels",
-            "type": "symbol",
+            "id": "roads-label",
             "source": "osm",
-            "source-layer": "pois",
-            "minzoom": 8,
-            "maxzoom": 24,
+            "source-layer": "roads",
             "filter": [
                 "all",
                 [
                     "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
                     "kind",
-                    "national_park"
+                    "minor_road",
+                    "major_road"
                 ]
             ],
+            "type": "symbol",
             "layout": {
-                "text-field": "{name}",
+                "symbol-placement": "line",
                 "text-font": [
-                    "Open Sans Regular",
-                    ""
+                    "Open Sans Regular"
                 ],
-                "text-size": 14
+                "text-field": "{name}",
+                "text-size": 16
+            },
+            "paint": {
+                "text-color": "#384646",
+                "text-halo-color": "#1f66ff"
             }
         },
         {
-            "id": "capital-label",
-            "type": "symbol",
+            "id": "city-label",
             "source": "osm",
+            "type": "symbol",
             "source-layer": "places",
-            "minzoom": 3,
-            "maxzoom": 14,
             "filter": [
                 "all",
                 [
@@ -670,24 +528,25 @@
                 ],
                 [
                     "==",
-                    "region_capital",
-                    true
+                    "kind",
+                    "locality"
                 ]
             ],
+            "maxzoom": 14,
             "layout": {
                 "text-field": "{name}",
                 "text-font": [
-                    "Roboto Bold"
+                    "Open Sans Semibold"
                 ],
                 "text-size": {
                     "stops": [
                         [
-                            6,
-                            16
+                            8,
+                            14
                         ],
                         [
-                            10,
-                            20
+                            12,
+                            21
                         ]
                     ]
                 },
@@ -695,89 +554,40 @@
                 "text-letter-spacing": 0.1
             },
             "paint": {
-                "text-color": "rgba(20, 20, 21, 1)",
-                "text-halo-color": "rgba(255, 255, 255, 1)",
-                "text-halo-width": 1,
-                "text-halo-blur": 1
+                "text-color": "#384646",
+                "text-halo-color": "rgba(255,255,255,0.5)"
             }
         },
         {
-            "id": "major-city",
-            "type": "symbol",
+            "minzoom": 4,
+            "maxzoom": 6,
+            "id": "state-label",
             "source": "osm",
             "source-layer": "places",
-            "minzoom": 5,
-            "maxzoom": 15,
             "filter": [
                 "all",
                 [
                     "==",
-                    "kind_detail",
-                    "city"
+                    "$type",
+                    "Point"
                 ],
-                [
-                    "!=",
-                    "region_capital",
-                    true
-                ],
-                [
-                    ">",
-                    "population",
-                    400000
-                ]
-            ],
-            "layout": {
-                "text-field": "{name}",
-                "text-font": [
-                    "Open Sans Regular",
-                    ""
-                ],
-                "text-size": 18
-            },
-            "paint": {
-                "text-color": "rgba(20, 20, 21, 1)",
-                "text-halo-color": "rgba(255, 255, 255, 1)",
-                "text-halo-width": 1,
-                "text-halo-blur": 1
-            }
-        },
-        {
-            "id": "minor_city_label",
-            "type": "symbol",
-            "source": "osm",
-            "source-layer": "places",
-            "minzoom": 7,
-            "filter": [
-                "all",
                 [
                     "==",
-                    "kind_detail",
-                    "city"
-                ],
-                [
-                    "!=",
-                    "region_capital",
-                    true
-                ],
-                [
-                    "<",
-                    "population",
-                    400000
+                    "kind",
+                    "region"
                 ]
             ],
+            "type": "symbol",
             "layout": {
-                "text-field": "{name}",
                 "text-font": [
-                    "Open Sans Regular",
-                    ""
+                    "Open Sans Regular"
                 ],
-                "text-size": 14
+                "text-field": "{name}",
+                "text-size": 16
             },
             "paint": {
-                "text-color": "rgba(20, 20, 21, 1)",
-                "text-halo-color": "rgba(255, 255, 255, 1)",
-                "text-halo-width": 1,
-                "text-halo-blur": 1
+                "text-color": "#a27172",
+                "text-halo-color": "rgba(255,255,255,0.5)"
             }
         },
         {
@@ -811,7 +621,7 @@
             },
             "paint": {
                 "text-color": "#FFF",
-                "text-halo-color": "rgba(164, 2, 164, 1)",
+                "text-halo-color": "#313131",
                 "text-halo-width": 1,
                 "text-halo-blur": 1,
                 "text-opacity": 1

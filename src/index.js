@@ -1,3 +1,3 @@
-import {StyleFactory, APOLLO_MAPPING_BRIGHT} from "./StyleFactory"
+import {StyleFactory, APOLLO_BRIGHT_STYLE, ZEN_STYLE} from "./StyleFactory"
 
-export {StyleFactory, APOLLO_MAPPING_BRIGHT};
+export {StyleFactory, APOLLO_BRIGHT_STYLE, ZEN_STYLE};

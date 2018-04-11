@@ -31,6 +31,7 @@ createIconSet () {
 	${spriteZeroPath} ${outputDir}/$2@2x temp/$2  --ratio=4
 }
 
-createIconSet ${iconConfigPath}apollomapping-bright-icons.csv apollomapping-bright-icons
+createIconSet ${iconConfigPath}apollo-bright-icons.csv apollo-bright-icons
+createIconSet ${iconConfigPath}zen-icons.csv zen-icons
 
 rm -rf temp

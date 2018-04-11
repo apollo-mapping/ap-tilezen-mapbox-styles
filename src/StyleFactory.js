@@ -1,6 +1,11 @@
 // @flow
 
-export const APOLLO_MAPPING_BRIGHT = require('./styles/apollomapping-bright.json');
+export const APOLLO_BRIGHT_STYLE = require('./styles/apollo-bright.json');
+
+// the zen style is a continuation of the style by mapzen found here:
+// https://github.com/mapzen/mapboxgl-vector-tiles
+// (which was very incomplete and didn't work with latest mapbox verseion)
+export const ZEN_STYLE = require('./styles/zen.json');
 
 export class StyleFactory {
     tileUrl: string = "";

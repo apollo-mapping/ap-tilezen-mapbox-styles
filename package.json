@@ -3,7 +3,7 @@
   "name": "@apollomapping/ap-tilezen-mapbox-styles",
   "description": "Mapbox styles for tilezen vector data format",
   "version": "0.1.0",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "generate-sprites": "./generate-sprites.sh",
     "build": "NODE_ENV=production babel ./src -d lib --copy-files",
@@ -19,8 +19,10 @@
     "mapbox",
     "tilezen"
   ],
+  "optionalDependencies": {
+    "@mapbox/spritezero-cli": "2.1.0"
+  },
   "devDependencies": {
-    "@mapbox/spritezero-cli": "2.1.0",
     "babel-cli": "^6.26.0",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
