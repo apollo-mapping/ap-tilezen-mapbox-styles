@@ -1,4 +1,4 @@
-import {APOLLO_BRIGHT, StyleFactory} from "../src/StyleFactory";
+import {APOLLO_BRIGHT_STYLE, StyleFactory} from "../src/StyleFactory";
 
 describe('style factory style creation', () => {
     test('style factory create style has correct resource urls from options', () => {
@@ -7,7 +7,7 @@ describe('style factory style creation', () => {
             resourceUrl: "www.mytileservice.com/resources/"
         });
 
-        const style = factory.createStyle(APOLLO_BRIGHT);
+        const style = factory.createStyle(APOLLO_BRIGHT_STYLE);
         expect(style["sprite"]).toBe("www.mytileservice.com/resources/sprites/apollomapping-bright-icons")
     });
 });
