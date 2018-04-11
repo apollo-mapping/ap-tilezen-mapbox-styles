@@ -7,9 +7,9 @@ Mapbox styles for tilezen vector tile data format. Uses maki icon set for sprite
 import {StyleFactory, APOLLO_BRIGHT_STYLE, ZEN_STYLE} from "@apollomapping/ap-tilezen-mapbox-styles";
 
 const styleFactory = new StyleFactory({
-    tileUrl: "https://vector-osm.apollomapping.com/all/{z}/{x}/{y}.mvt",
+    tileUrl: "https://your-vector-server.com/all/{z}/{x}/{y}.mvt",
     // resource url is the base location for your style's sprites and fonts    
-    resourceUrl: "https://s3-us-west-1.amazonaws.com/osm-vector-tiles-apollomapping",
+    resourceUrl: "https://your-vector-resource-server.com",
 });
 
 const myMapBoxStyle = styleFactory.createStyle(APOLLO_BRIGHT_STYLE);
