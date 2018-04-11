@@ -1,0 +1,24 @@
+{
+  "author": "Apollo Mapping",
+  "name": "@apollomapping/ap-tilezen-mapbox-styles",
+  "description": "Mapbox styles for tilezen vector data format",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "./build.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/apollomapping/ap-tilezen-mapbox-styles"
+  },
+  "keywords": [
+    "map",
+    "styles",
+    "mapbox",
+    "tilezen"
+  ],
+  "dependencies": {
+    "@mapbox/maki": "^4.0.0",
+    "@mapbox/spritezero-cli": "^2.1.0"
+  }
+}
