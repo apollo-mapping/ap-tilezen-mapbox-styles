@@ -29,6 +29,12 @@ icon names and the color to colorize the icon too.
 Upload the contents of the sprites folder to a static site at this location: {your_resource_url}/sprites/
 
 You can also use the simple deploy.sh script that you pass in your bucket name as first argument and aws profile name as second
+
+### Shield Icons
+The shield icons come from https://wiki.openstreetmap.org/wiki/Custom_Highway_Shields with slight modifications  
+The license notices for the icons from the wiki state that they are in the public domain and the
+full notice can be found in the readme of the icons folder. 
+
 ### Deploying and generating glyphs/fonts
 use: https://github.com/openmaptiles/fonts
 

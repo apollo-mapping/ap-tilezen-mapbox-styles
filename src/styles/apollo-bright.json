@@ -23,49 +23,6 @@
             }
         },
         {
-            "id": "water-line",
-            "type": "line",
-            "source": "osm",
-            "source-layer": "water",
-            "filter": [
-                "==",
-                "$type",
-                "LineString"
-            ],
-            "paint": {
-                "line-color": "rgba(177, 233, 236, 1)",
-                "line-width": {
-                    "base": 1.2,
-                    "stops": [
-                        [
-                            8,
-                            0.5
-                        ],
-                        [
-                            20,
-                            15
-                        ]
-                    ]
-                }
-            }
-        },
-        {
-            "id": "water-fill",
-            "type": "fill",
-            "source": "osm",
-            "source-layer": "water",
-            "filter": [
-                "==",
-                "$type",
-                "Polygon"
-            ],
-            "paint": {
-                "fill-color": "rgba(70, 73, 135, 0.6)",
-                "fill-outline-color": "rgba(71, 71, 121, 1)",
-                "fill-opacity": 1
-            }
-        },
-        {
             "id": "park-fill",
             "type": "fill",
             "source": "osm",
@@ -95,6 +52,70 @@
                 "fill-color": "rgba(131, 234, 117, 0.75)"
             },
             "min-zoom": 4
+        },
+        {
+            "id": "water-fill",
+            "type": "fill",
+            "source": "osm",
+            "source-layer": "water",
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "Polygon"
+                ],
+                [
+                    ">",
+                    "area",
+                    100000
+                ]
+            ],
+            "paint": {
+                "fill-color": "#9092b7",
+                "fill-opacity": 1
+            }
+        },
+        {
+            "id": "water-line",
+            "type": "line",
+            "source": "osm",
+            "source-layer": "water",
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
+                    "kind",
+                    "lake",
+                    "water"
+                ],
+                [
+                    ">",
+                    "area",
+                    100000
+                ]
+            ],
+            "paint": {
+                "line-color": "#4B4964",
+                "line-width": {
+                    "base": 1.0,
+                    "stops": [
+                        [
+                            8,
+                            0.5
+                        ],
+                        [
+                            16,
+                            1
+                        ]
+                    ]
+                }
+            }
         },
         {
             "id": "river-line",
@@ -236,7 +257,7 @@
             "max-zoom": 17
         },
         {
-            "id": "subways-linw",
+            "id": "subways-line",
             "type": "line",
             "source": "osm",
             "source-layer": "roads",
@@ -293,6 +314,7 @@
             "type": "fill",
             "source": "osm",
             "source-layer": "buildings",
+            "minzoom": 15,
             "paint": {
                 "fill-outline-color": "rgba(218, 215, 184, 1)",
                 "fill-color": "rgba(226, 218, 193, 1)"
@@ -313,7 +335,7 @@
                 "line-cap": "round"
             },
             "paint": {
-                "line-color": "rgba(164, 2, 164, 1)",
+                "line-color": "rgba(162, 99, 183, 1)",
                 "line-width": {
                     "base": 1.55,
                     "stops": [
@@ -362,6 +384,10 @@
                         [
                             14,
                             3
+                        ],
+                        [
+                            16,
+                            6
                         ]
                     ]
                 }
@@ -383,10 +409,56 @@
                     "==",
                     "kind",
                     "major_road"
+                ],
+                [
+                    "!in",
+                    "kind_detail",
+                    "secondary",
+                    "primary"
                 ]
             ],
             "paint": {
                 "line-color": "rgba(228, 207, 223, 1)",
+                "line-width": {
+                    "base": 1.55,
+                    "stops": [
+                        [
+                            4,
+                            0.5
+                        ],
+                        [
+                            8,
+                            1.5
+                        ],
+                        [
+                            20,
+                            40
+                        ]
+                    ]
+                }
+            }
+        },
+        {
+            "id": "secondary-road-line",
+            "type": "line",
+            "source": "osm",
+            "source-layer": "roads",
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
+                    "kind_detail",
+                    "secondary",
+                    "primary"
+                ]
+            ],
+            "paint": {
+                "line-color": "#B499D1",
                 "line-width": {
                     "base": 1.55,
                     "stops": [
@@ -811,9 +883,45 @@
             },
             "paint": {
                 "text-color": "#FFF",
-                "text-halo-color": "rgba(164, 2, 164, 1)",
+                "text-halo-color": "rgba(162, 99, 183, 1)",
                 "text-halo-width": 1,
                 "text-halo-blur": 1,
+                "text-opacity": 1
+            }
+        },
+        {
+            "id": "interstate-shield-label",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "roads",
+            "minzoom": 8,
+            "maxzoom": 14,
+            "filter": [
+                "all",
+                ["==", "$type", "LineString"],
+                ["in", "kind", "highway"],
+                ["has", "shield_text"],
+                ["in", "network", "US:I"]
+            ],
+            "layout": {
+                "text-field": "{shield_text}",
+                "text-size": 10,
+                "text-font": [
+                    "Roboto Bold"
+                ],
+                "symbol-placement": "line",
+                "symbol-spacing": 1000,
+                "icon-image": "us-interstate-shield-2",
+                "text-rotation-alignment": "viewport",
+                "icon-rotation-alignment": "viewport",
+                "icon-size": 1.8,
+                "text-offset": [
+                    0,
+                    0.2
+                ]
+            },
+            "paint": {
+                "text-color": "#FFF",
                 "text-opacity": 1
             }
         },
@@ -822,37 +930,71 @@
             "type": "symbol",
             "source": "osm",
             "source-layer": "roads",
-            "minzoom": 9,
+            "minzoom": 8,
             "maxzoom": 14,
             "filter": [
                 "all",
-                [
-                    "==",
-                    "$type",
-                    "LineString"
-                ],
-                [
-                    "in",
-                    "kind",
-                    "highway"
-                ]
+                ["==", "$type", "LineString"],
+                ["in", "kind", "highway"],
+                ["has", "shield_text"],
+                ["in", "network", "US:US"]
             ],
             "layout": {
                 "text-field": "{shield_text}",
-                "text-size": 12,
+                "text-size": 10,
                 "text-font": [
                     "Roboto Bold"
                 ],
                 "symbol-placement": "line",
+                "symbol-spacing": 1000,
+                "icon-image": "us-highway-ca-2",
                 "text-rotation-alignment": "viewport",
                 "icon-rotation-alignment": "viewport",
-                "symbol-spacing": 1000
+                "icon-size": 1.8,
+                "text-offset": [
+                    0,
+                    0.2
+                ]
             },
             "paint": {
-                "text-color": "#FFF",
-                "text-halo-color": "rgba(164, 2, 164, 1)",
-                "text-halo-width": 1,
-                "text-halo-blur": 1,
+                "text-color": "#000000",
+                "text-opacity": 1
+            }
+        },
+        {
+            "id": "other-highway-type-shield-label",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "roads",
+            "minzoom": 8,
+            "maxzoom": 14,
+            "filter": [
+                "all",
+                ["==", "$type", "LineString"],
+                ["in", "kind", "highway", "motorway"],
+                ["has", "shield_text"],
+                ["!in", "network", "US:US", "US:I"]
+            ],
+            "layout": {
+                "text-field": "{shield_text}",
+                "text-size": 10,
+                "text-font": [
+                    "Roboto Regular"
+                ],
+                "symbol-placement": "line",
+                "symbol-spacing": 1000,
+                "icon-image": "generic-shield-2",
+                "text-rotation-alignment": "viewport",
+                "icon-rotation-alignment": "viewport",
+                "icon-size": 1.8,
+                "icon-text-fit": "both",
+                "text-offset": [
+                    0,
+                    -0.2
+                ]
+            },
+            "paint": {
+                "text-color": "#1F1F1F",
                 "text-opacity": 1
             }
         },
@@ -871,7 +1013,7 @@
             ],
             "layout": {
                 "icon-image": "airport-15",
-                "icon-size": 1.2,
+                "icon-size": 1.0,
                 "text-field": "",
                 "text-size": 16,
                 "text-font": [
