@@ -1,4 +1,5 @@
 #!/bin/bash
+./generate-sprites.sh
 s3Bucket=$1
 awsProfile=$2
 
