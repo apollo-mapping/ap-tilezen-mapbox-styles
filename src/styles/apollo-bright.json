@@ -38,7 +38,7 @@
                             "rgba(229, 245, 219, 1)"
                         ],
                         [
-                            8,
+                            10,
                             "rgba(255, 255, 255, 1)"
                         ]
                     ]
@@ -106,35 +106,6 @@
                     "==",
                     "$type",
                     "Polygon"
-                ],
-                [
-                    ">",
-                    "area",
-                    100000
-                ]
-            ],
-            "paint": {
-                "fill-color": "rgba(181, 211, 243, 1)",
-                "fill-opacity": 1
-            }
-        },
-        {
-            "id": "small-water-fill",
-            "type": "fill",
-            "source": "osm",
-            "source-layer": "water",
-            "minzoom": 12,
-            "filter": [
-                "all",
-                [
-                    "==",
-                    "$type",
-                    "Polygon"
-                ],
-                [
-                    "<=",
-                    "area",
-                    100000
                 ]
             ],
             "paint": {
@@ -521,13 +492,17 @@
                 ]
             ],
             "paint": {
-                "line-color": "#B499D1",
+                "line-color": "rgba(228, 207, 223, 1)",
                 "line-width": {
                     "base": 1.55,
                     "stops": [
                         [
                             4,
-                            0.5
+                            0.3
+                        ],
+                        [
+                            6,
+                            0.6
                         ],
                         [
                             8,
@@ -665,7 +640,7 @@
                 "text-font": [
                     "Roboto Medium Italic"
                 ],
-                "text-field": "{name}",
+                "text-field": "{localization_name}",
                 "text-size": 13
             },
             "paint": {
@@ -703,7 +678,7 @@
                 "text-font": [
                     "Roboto Medium"
                 ],
-                "text-field": "{name}",
+                "text-field": "{localization_name}",
                 "text-size": {
                     "property": "population",
                     "stops": [
@@ -751,7 +726,7 @@
             ],
             "layout": {
                 "text-font": ["Roboto Bold"],
-                "text-field": "{name}",
+                "text-field": "{localization_name}",
                 "text-size": 12
             },
             "paint": {
@@ -834,7 +809,7 @@
                 ]
             ],
             "layout": {
-                "text-field": "{name}",
+                "text-field": "{localization_name}",
                 "text-font": [
                     "Roboto Light Italic"
                 ],
@@ -867,7 +842,7 @@
                 ]
             ],
             "layout": {
-                "text-field": "{name}",
+                "text-field": "{localization_name}",
                 "text-font": [
                     "Roboto Light Italic"
                 ],
@@ -1047,7 +1022,7 @@
                 [
                     ">",
                     "population",
-                    400000
+                    200000
                 ]
             ],
             "layout": {
@@ -1085,9 +1060,9 @@
                     true
                 ],
                 [
-                    "<",
+                    "<=",
                     "population",
-                    400000
+                    200000
                 ]
             ],
             "layout": {
@@ -1243,6 +1218,12 @@
                 "text-offset": [
                     0,
                     -0.2
+                ],
+                "icon-text-fit-padding": [
+                    0,
+                    3,
+                    0,
+                    3
                 ]
             },
             "paint": {

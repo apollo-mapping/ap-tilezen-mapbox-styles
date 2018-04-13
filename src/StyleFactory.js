@@ -10,9 +10,12 @@ export const ZEN_STYLE = require('./styles/zen.json');
 export class StyleFactory {
     tileUrl: string = "";
     resourceUrl: string = "";
-    constructor (options: {tileUrl: string, resourceUrl: string}) {
+    localization: string = "";
+
+    constructor (options: {tileUrl: string, resourceUrl: string, localization: string}) {
         this.tileUrl = options.tileUrl;
         this.resourceUrl = options.resourceUrl;
+        this.localization = options.localization;
 
         if (this.resourceUrl.endsWith("/") && this.resourceUrl.length > 1)
             this.resourceUrl = this.resourceUrl.substring(0, this.resourceUrl.length - 1);
@@ -24,6 +27,12 @@ export class StyleFactory {
         // creating styles is something you only do once on app start up so no performance worries
         styleString = styleString.replace(/{resource_url}/g, this.resourceUrl);
         styleString = styleString.replace(/{tile_server_xyz_url}/g, this.tileUrl);
+
+        var localizationField = "{name}";
+        if (this.localization && this.localization.length > 0)
+            localizationField = "{name:" + this.localization + "}";
+
+        styleString = styleString.replace(/{localization_name}/g, localizationField);
 
         return JSON.parse(styleString);
     }

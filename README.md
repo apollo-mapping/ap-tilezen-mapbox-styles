@@ -10,6 +10,10 @@ const styleFactory = new StyleFactory({
     tileUrl: "https://your-vector-server.com/all/{z}/{x}/{y}.mvt",
     // resource url is the base location for your style's sprites and fonts    
     resourceUrl: "https://your-vector-resource-server.com",
+    // localization type to use for certain labels. Pass inn ISO 639-1 two-letter language code 
+    // ie "en" which turns {name} into {name:en} and defaults to {name} if nothing is passed in.
+    // only used for country, region, ocean and sea labels as localization properties did not work with others
+    localization: "en"
 });
 
 const myMapBoxStyle = styleFactory.createStyle(APOLLO_BRIGHT_STYLE);
@@ -23,6 +27,9 @@ ZEN_STYLE
 ```
 
 ### Deploying and generating sprites
+#### Note nvm with node 8.9 must be installed to run the sprite generation script
+8.9 is required for spritezero no other version will work not 9.x not 8.6
+ 
 Sprites can be regenerated with the generate-sprites.sh bash script. It reads from the style .csv files that contain pairs of
 icon names and the color to colorize the icon too.
 
