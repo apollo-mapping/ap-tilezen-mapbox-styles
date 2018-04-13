@@ -64,3 +64,5 @@ typings/
 /build
 /temp
 /lib
+/local-dump.sh
+/sprites
