@@ -4,4 +4,5 @@ mountain,#604034
 college,#3D3D3D
 school,#3D3D3D
 airport,#D96B00,#ffffff
+circle,#000000,#ffffff
 #have to keep last line or it bash script dicks up reading csv file
