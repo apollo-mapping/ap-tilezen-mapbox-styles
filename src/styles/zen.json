@@ -460,7 +460,8 @@
             "layout": {
                 "text-field": "{name}",
                 "text-font": [
-                    "Open Sans Italic"
+                    "Open Sans Italic",
+                    "Noto Sans Italic"
                 ],
                 "text-max-width": 14,
                 "text-letter-spacing": 0.1,
@@ -504,7 +505,8 @@
             "layout": {
                 "symbol-placement": "line",
                 "text-font": [
-                    "Open Sans Regular"
+                    "Open Sans Regular",
+                    "Noto Sans Regular"
                 ],
                 "text-field": "{name}",
                 "text-size": 16
@@ -536,7 +538,8 @@
             "layout": {
                 "text-field": "{name}",
                 "text-font": [
-                    "Open Sans Semibold"
+                    "Open Sans Semibold",
+                    "Noto Sans Regular"
                 ],
                 "text-size": {
                     "stops": [
@@ -580,7 +583,8 @@
             "type": "symbol",
             "layout": {
                 "text-font": [
-                    "Open Sans Regular"
+                    "Open Sans Regular",
+                    "Noto Sans Regular"
                 ],
                 "text-field": "{name}",
                 "text-size": 16

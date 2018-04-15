@@ -9,6 +9,14 @@
             "tiles": [
                 "{tile_server_xyz_url}"
             ]
+        },
+        "natural_earth_2": {
+            "maxzoom": 6,
+            "tileSize": 256,
+            "tiles": [
+                "https://s3-us-west-1.amazonaws.com/osm-vector-tiles-apollomapping/raster/natural-earth-2/{z}/{x}/{y}.png"
+            ],
+            "type": "raster"
         }
     },
     "sprite": "{resource_url}/sprites/apollo-bright-icons",
@@ -26,20 +34,24 @@
             ]
         },
         {
-            "id": "earth-fill",
-            "type": "fill",
-            "source": "osm",
-            "source-layer": "earth",
+            "id": "natural_earth",
+            "type": "raster",
+            "source": "natural_earth_2",
+            "maxzoom": 6,
+            "layout": {
+                "visibility": "visible"
+            },
             "paint": {
-                "fill-color": {
+                "raster-opacity": {
+                    "base": 1.5,
                     "stops": [
                         [
                             0,
-                            "rgba(236, 245, 231, 1)"
+                            0.6
                         ],
                         [
-                            10,
-                            "rgba(255, 255, 255, 1)"
+                            6,
+                            0.1
                         ]
                     ]
                 }
@@ -660,7 +672,8 @@
             ],
             "layout": {
                 "text-font": [
-                    "Roboto Medium Italic"
+                    "Roboto Medium Italic",
+                    "Noto Sans Italic"
                 ],
                 "text-field": {
                     "stops": [
@@ -670,7 +683,7 @@
                         ],
                         [
                             5,
-                            "{name}"
+                            "{localization_name}"
                         ]
                     ]
                 },
@@ -710,7 +723,8 @@
             ],
             "layout": {
                 "text-font": [
-                    "Roboto Medium"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ],
                 "text-field": "{localization_name}",
                 "text-size": {
@@ -759,7 +773,10 @@
                 ]
             ],
             "layout": {
-                "text-font": ["Roboto Bold"],
+                "text-font": [
+                    "Roboto Bold",
+                    "Noto Sans Bold"
+                ],
                 "text-field": "{localization_name}",
                 "text-size": 12
             },
@@ -791,7 +808,8 @@
             "layout": {
                 "symbol-placement": "line",
                 "text-font": [
-                    "Roboto Regular"
+                    "Roboto Regular",
+                    "Noto Sans Regular"
                 ],
                 "text-field": "{name}",
                 "text-size": 12,
@@ -808,14 +826,24 @@
             "type": "symbol",
             "source": "osm",
             "source-layer": "roads",
-            "filter": ["all",
-                ["==", "$type", "LineString"],
-                ["in", "kind", "major_road"]
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
+                    "kind",
+                    "major_road"
+                ]
             ],
             "layout": {
                 "symbol-placement": "line",
                 "text-font": [
-                    "Roboto Regular"
+                    "Roboto Regular",
+                    "Noto Sans Regular"
                 ],
                 "text-field": "{name}",
                 "text-size": 12,
@@ -849,10 +877,12 @@
             "layout": {
                 "text-field": "{localization_name}",
                 "text-font": [
-                    "Roboto Medium Italic"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ],
                 "text-letter-spacing": 0.07,
-                "text-size": 16
+                "text-size": 12,
+                "text-transform": "uppercase"
             },
             "paint": {
                 "text-color": "rgba(116, 177, 243, 1)",
@@ -884,15 +914,21 @@
             "layout": {
                 "text-field": "{localization_name}",
                 "text-font": [
-                    "Roboto Light Italic"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ],
-                "text-letter-spacing": 0,
-                "text-size": 14
+                "text-letter-spacing": 0.07,
+                "text-size": 10,
+                "text-max-width": 3,
+                "text-transform": "uppercase"
             },
             "paint": {
-                "text-color": "rgba(222, 239, 253, 1)"
+                "text-color": "rgba(116, 177, 243, 1)",
+                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-width": 0.3,
+                "text-halo-blur": 0.3
             },
-            "minzoom": 3,
+            "minzoom": 1,
             "maxzoom": 22
         },
         {
@@ -918,7 +954,8 @@
             "layout": {
                 "text-field": "{name}",
                 "text-font": [
-                    "Roboto Light Italic"
+                    "Roboto Light Italic",
+                    "Noto Sans Italic"
                 ],
                 "text-size": 10
             },
@@ -949,7 +986,8 @@
             "layout": {
                 "text-field": "{name}",
                 "text-font": [
-                    "Roboto Light Italic"
+                    "Roboto Light Italic",
+                    "Noto Sans Italic"
                 ],
                 "text-size": 10
             },
@@ -983,7 +1021,8 @@
                 "text-anchor": "top",
                 "text-size": 11,
                 "text-font": [
-                    "Roboto Regular"
+                    "Roboto Regular",
+                    "Noto Sans Regular"
                 ]
             },
             "paint": {
@@ -991,132 +1030,6 @@
                 "text-halo-width": 1,
                 "text-halo-blur": 1,
                 "text-color": "rgba(61, 61, 61, 1)"
-            }
-        },
-        {
-            "id": "capital-label",
-            "type": "symbol",
-            "source": "osm",
-            "source-layer": "places",
-            "minzoom": 3,
-            "maxzoom": 14,
-            "filter": [
-                "any",
-                [
-                    "==",
-                    "region_capital",
-                    true
-                ],
-                [
-                    "==",
-                    "country_capital",
-                    true
-                ]
-            ],
-            "layout": {
-                "text-field": "{name}",
-                "text-font": [
-                    "Roboto Bold"
-                ],
-                "text-size": {
-                    "stops": [
-                        [
-                            6,
-                            11
-                        ],
-                        [
-                            10,
-                            13
-                        ]
-                    ]
-                },
-                "text-max-width": 10,
-                "text-letter-spacing": 0.1,
-                "icon-image": "circle-11",
-                "text-anchor": "bottom",
-                "icon-size": 0.4
-            },
-            "paint": {
-                "text-color": "rgba(20, 20, 21, 1)",
-                "text-halo-color": "rgba(255, 255, 255, 1)",
-                "text-halo-width": 1,
-                "text-halo-blur": 1
-            }
-        },
-        {
-            "id": "major-city",
-            "type": "symbol",
-            "source": "osm",
-            "source-layer": "places",
-            "minzoom": 5,
-            "maxzoom": 15,
-            "filter": [
-                "all",
-                [
-                    "==",
-                    "kind_detail",
-                    "city"
-                ],
-                [
-                    "!=",
-                    "region_capital",
-                    true
-                ],
-                [
-                    ">",
-                    "population",
-                    200000
-                ]
-            ],
-            "layout": {
-                "text-field": "{name}",
-                "text-font": ["Roboto Regular"],
-                "text-size": 18
-            },
-            "paint": {
-                "text-color": "rgba(20, 20, 21, 1)",
-                "text-halo-color": "rgba(255, 255, 255, 1)",
-                "text-halo-width": 1,
-                "text-halo-blur": 1
-            }
-        },
-        {
-            "id": "minor_city_label",
-            "type": "symbol",
-            "source": "osm",
-            "source-layer": "places",
-            "minzoom": 4,
-            "maxzoom": 15,
-            "filter": [
-                "all",
-                [
-                    "==",
-                    "kind_detail",
-                    "city"
-                ],
-                [
-                    "!=",
-                    "region_capital",
-                    true
-                ],
-                [
-                    "<=",
-                    "population",
-                    200000
-                ]
-            ],
-            "layout": {
-                "text-field": "{name}",
-                "text-font": [
-                    "Roboto Regular"
-                ],
-                "text-size": 14
-            },
-            "paint": {
-                "text-color": "rgba(20, 20, 21, 1)",
-                "text-halo-color": "rgba(255, 255, 255, 0.7)",
-                "text-halo-width": 1,
-                "text-halo-blur": 1
             }
         },
         {
@@ -1156,7 +1069,8 @@
             "layout": {
                 "text-field": "{name}",
                 "text-font": [
-                    "Roboto Medium"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ],
                 "text-size": {
                     "stops": [
@@ -1214,7 +1128,8 @@
             "layout": {
                 "text-field": "{name}",
                 "text-font": [
-                    "Roboto Medium"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ],
                 "text-size": {
                     "stops": [
@@ -1243,6 +1158,137 @@
             }
         },
         {
+            "id": "capital-label",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "places",
+            "minzoom": 3,
+            "maxzoom": 14,
+            "filter": [
+                "any",
+                [
+                    "==",
+                    "region_capital",
+                    true
+                ],
+                [
+                    "==",
+                    "country_capital",
+                    true
+                ]
+            ],
+            "layout": {
+                "text-field": "{name}",
+                "text-font": [
+                    "Roboto Bold",
+                    "Noto Sans Bold"
+                ],
+                "text-size": {
+                    "stops": [
+                        [
+                            6,
+                            11
+                        ],
+                        [
+                            10,
+                            13
+                        ]
+                    ]
+                },
+                "text-max-width": 10,
+                "text-letter-spacing": 0.1,
+                "icon-image": "circle-11",
+                "text-anchor": "bottom",
+                "icon-size": 0.4
+            },
+            "paint": {
+                "text-color": "rgba(20, 20, 21, 1)",
+                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-width": 1,
+                "text-halo-blur": 1
+            }
+        },
+        {
+            "id": "major-city",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "places",
+            "minzoom": 5,
+            "maxzoom": 15,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "kind_detail",
+                    "city"
+                ],
+                [
+                    "!=",
+                    "region_capital",
+                    true
+                ],
+                [
+                    ">",
+                    "population",
+                    200000
+                ]
+            ],
+            "layout": {
+                "text-field": "{localization_name}",
+                "text-font": [
+                    "Roboto Regular",
+                    "Noto Sans Regular"
+                ],
+                "text-size": 18
+            },
+            "paint": {
+                "text-color": "rgba(20, 20, 21, 1)",
+                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-width": 1,
+                "text-halo-blur": 1
+            }
+        },
+        {
+            "id": "minor_city_label",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "places",
+            "minzoom": 4,
+            "maxzoom": 15,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "kind_detail",
+                    "city"
+                ],
+                [
+                    "!=",
+                    "region_capital",
+                    true
+                ],
+                [
+                    "<=",
+                    "population",
+                    200000
+                ]
+            ],
+            "layout": {
+                "text-field": "{localization_name}",
+                "text-font": [
+                    "Roboto Regular",
+                    "Noto Sans Regular"
+                ],
+                "text-size": 14
+            },
+            "paint": {
+                "text-color": "rgba(20, 20, 21, 1)",
+                "text-halo-color": "rgba(255, 255, 255, 0.7)",
+                "text-halo-width": 1,
+                "text-halo-blur": 1
+            }
+        },
+        {
             "id": "highway-label",
             "type": "symbol",
             "source": "osm",
@@ -1265,7 +1311,8 @@
             "layout": {
                 "symbol-placement": "line",
                 "text-font": [
-                    "Roboto Regular"
+                    "Roboto Regular",
+                    "Noto Sans Regular"
                 ],
                 "text-field": "{name}",
                 "text-size": 10
@@ -1287,16 +1334,32 @@
             "maxzoom": 14,
             "filter": [
                 "all",
-                ["==", "$type", "LineString"],
-                ["in", "kind", "highway"],
-                ["has", "shield_text"],
-                ["in", "network", "US:I"]
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
+                    "kind",
+                    "highway"
+                ],
+                [
+                    "has",
+                    "shield_text"
+                ],
+                [
+                    "in",
+                    "network",
+                    "US:I"
+                ]
             ],
             "layout": {
                 "text-field": "{shield_text}",
                 "text-size": 10,
                 "text-font": [
-                    "Roboto Bold"
+                    "Roboto Bold",
+                    "Noto Sans Bold"
                 ],
                 "symbol-placement": "line",
                 "symbol-spacing": 1000,
@@ -1323,16 +1386,32 @@
             "maxzoom": 14,
             "filter": [
                 "all",
-                ["==", "$type", "LineString"],
-                ["in", "kind", "highway"],
-                ["has", "shield_text"],
-                ["in", "network", "US:US"]
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
+                    "kind",
+                    "highway"
+                ],
+                [
+                    "has",
+                    "shield_text"
+                ],
+                [
+                    "in",
+                    "network",
+                    "US:US"
+                ]
             ],
             "layout": {
                 "text-field": "{shield_text}",
                 "text-size": 10,
                 "text-font": [
-                    "Roboto Bold"
+                    "Roboto Bold",
+                    "Noto Sans Bold"
                 ],
                 "symbol-placement": "line",
                 "symbol-spacing": 1000,
@@ -1359,16 +1438,34 @@
             "maxzoom": 14,
             "filter": [
                 "all",
-                ["==", "$type", "LineString"],
-                ["in", "kind", "highway", "motorway"],
-                ["has", "shield_text"],
-                ["!in", "network", "US:US", "US:I"]
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
+                    "kind",
+                    "highway",
+                    "motorway"
+                ],
+                [
+                    "has",
+                    "shield_text"
+                ],
+                [
+                    "!in",
+                    "network",
+                    "US:US",
+                    "US:I"
+                ]
             ],
             "layout": {
                 "text-field": "{shield_text}",
                 "text-size": 10,
                 "text-font": [
-                    "Roboto Regular"
+                    "Roboto Regular",
+                    "Noto Sans Regular"
                 ],
                 "symbol-placement": "line",
                 "symbol-spacing": 1000,
@@ -1423,7 +1520,8 @@
                 },
                 "text-size": 11,
                 "text-font": [
-                    "Roboto Medium"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ],
                 "text-anchor": "top",
                 "text-offset": [
@@ -1560,7 +1658,8 @@
                 },
                 "text-size": 10,
                 "text-font": [
-                    "Roboto Regular"
+                    "Roboto Regular",
+                    "Noto Sans Regular"
                 ],
                 "text-anchor": "top",
                 "text-justify": "center",
@@ -1626,7 +1725,10 @@
                 ],
                 "text-anchor": "top",
                 "text-size": 12,
-                "text-font": ["Roboto Regular"]
+                "text-font": [
+                    "Roboto Regular",
+                    "Noto Sans Regular"
+                ]
             },
             "paint": {
                 "text-halo-color": "rgba(255, 255, 255, 1)",
@@ -1660,7 +1762,10 @@
                 ],
                 "text-anchor": "top",
                 "text-size": 12,
-                "text-font": ["Roboto Regular"]
+                "text-font": [
+                    "Roboto Regular",
+                    "Noto Sans Regular"
+                ]
             },
             "paint": {
                 "text-halo-color": "rgba(255, 255, 255, 1)",
