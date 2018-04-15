@@ -20,7 +20,6 @@
     "tilezen"
   ],
   "optionalDependencies": {
-    "@mapbox/spritezero-cli": "2.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -37,7 +36,8 @@
     "flow-bin": "0.65.0",
     "babel-plugin-add-module-exports": "^0.2.1",
     "jest": "20.0.4",
-    "jest-junit-reporter": "1.1.0"
+    "jest-junit-reporter": "1.1.0",
+    "@mapbox/spritezero-cli": "2.1.0"
   },
   "dependencies": {
     "@mapbox/maki": "^4.0.0"
