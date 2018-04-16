@@ -1026,10 +1026,84 @@
                 ]
             },
             "paint": {
-                "text-halo-color": "rgba(255, 255, 255, 0.6)",
+                "text-halo-color": "rgba(255, 255, 255, 0.7)",
                 "text-halo-width": 1,
                 "text-halo-blur": 1,
-                "text-color": "rgba(61, 61, 61, 1)"
+                "text-color": "#227936"
+            }
+        },
+        {
+            "id": "park_labels",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "pois",
+            "minzoom": 13,
+            "maxzoom": 24,
+            "filter": [
+                "all",
+                [
+                    "in",
+                    "kind",
+                    "park",
+                    "dog_park"
+                ]
+            ],
+            "layout": {
+                "icon-image": "park-alt1-11",
+                "icon-size": 1,
+                "text-field": "{name}",
+                "text-offset": [
+                    0,
+                    0.8
+                ],
+                "text-anchor": "top",
+                "text-size": 11,
+                "text-font": [
+                    "Roboto Regular",
+                    "Noto Sans Regular"
+                ]
+            },
+            "paint": {
+                "text-halo-color": "rgba(255, 255, 255, 0.7)",
+                "text-halo-width": 1,
+                "text-halo-blur": 1,
+                "text-color": "#227936"
+            }
+        }, {
+            "id": "cemetery_labels",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "pois",
+            "minzoom": 13,
+            "maxzoom": 24,
+            "filter": [
+                "all",
+                [
+                    "in",
+                    "kind",
+                    "cemetery"
+                ]
+            ],
+            "layout": {
+                "icon-image": "cemetery-11",
+                "icon-size": 1,
+                "text-field": "{name}",
+                "text-offset": [
+                    0,
+                    0.8
+                ],
+                "text-anchor": "top",
+                "text-size": 11,
+                "text-font": [
+                    "Roboto Regular",
+                    "Noto Sans Regular"
+                ]
+            },
+            "paint": {
+                "text-halo-color": "rgba(255, 255, 255, 0.7)",
+                "text-halo-width": 1,
+                "text-halo-blur": 1,
+                "text-color": "#227936"
             }
         },
         {
@@ -1724,17 +1798,17 @@
                     0.8
                 ],
                 "text-anchor": "top",
-                "text-size": 12,
+                "text-size": 10,
                 "text-font": [
                     "Roboto Regular",
                     "Noto Sans Regular"
                 ]
             },
             "paint": {
-                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-color": "rgba(255, 255, 255, .7)",
                 "text-halo-width": 1,
                 "text-halo-blur": 1,
-                "text-color": "rgba(61, 61, 61, 1)"
+                "text-color": "#3B45A0"
             }
         },
         {
@@ -1742,7 +1816,7 @@
             "type": "symbol",
             "source": "osm",
             "source-layer": "pois",
-            "minzoom": 13,
+            "minzoom": 14,
             "maxzoom": 24,
             "filter": [
                 "all",
@@ -1761,17 +1835,54 @@
                     0.8
                 ],
                 "text-anchor": "top",
-                "text-size": 12,
+                "text-size": 11,
                 "text-font": [
                     "Roboto Regular",
                     "Noto Sans Regular"
                 ]
             },
             "paint": {
-                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-color": "rgba(255, 255, 255, .7)",
                 "text-halo-width": 1,
                 "text-halo-blur": 1,
-                "text-color": "rgba(61, 61, 61, 1)"
+                "text-color": "#3B45A0"
+            }
+        },
+        {
+            "id": "museum-symbol",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "pois",
+            "minzoom": 16,
+            "maxzoom": 24,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "kind",
+                    "museum"
+                ]
+            ],
+            "layout": {
+                "icon-image": "museum-11",
+                "icon-size": 0.8,
+                "text-field": "{name}",
+                "text-offset": [
+                    0,
+                    0.8
+                ],
+                "text-anchor": "top",
+                "text-size": 11,
+                "text-font": [
+                    "Roboto Regular",
+                    "Noto Sans Regular"
+                ]
+            },
+            "paint": {
+                "text-halo-color": "rgba(255, 255, 255, .7)",
+                "text-halo-width": 1,
+                "text-halo-blur": 1,
+                "text-color": "#3B45A0"
             }
         }
     ]

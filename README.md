@@ -9,7 +9,8 @@ import {StyleFactory, APOLLO_BRIGHT_STYLE, ZEN_STYLE} from "@apollomapping/ap-ti
 const styleFactory = new StyleFactory({
     tileUrl: "https://your-vector-server.com/all/{z}/{x}/{y}.mvt",
     // resource url is the base location for your style's sprites and fonts    
-    resourceUrl: "https://your-vector-resource-server.com",
+    // you can use our public sprite and font resources whose url is below (for now at least)
+    resourceUrl: "https://s3-us-west-1.amazonaws.com/osm-vector-tiles-apollomapping",
     // localization type to use for certain labels. Pass inn ISO 639-1 two-letter language code 
     // ie "en" which turns {name} into {name:en} and defaults to {name} if nothing is passed in.
     // only used for country, region, ocean and sea labels as localization properties did not work with others
@@ -39,8 +40,8 @@ You can also use the simple deploy.sh script that you pass in your bucket name a
 
 
 ### Deploying and generating glyphs/fonts
-use: https://github.com/openmaptiles/fonts
-
+Use this openmaptiles fork https://github.com/m-abboud/fonts
+Run the generate.js script followed by the concat.js script (which concats all fonts with their noto equivelents)
 Upload the generated fonts to your static web server at this location: {your_resource_url}/tile_fonts/
   
 [todo add font generation script]

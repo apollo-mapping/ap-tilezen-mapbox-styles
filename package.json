@@ -19,8 +19,7 @@
     "mapbox",
     "tilezen"
   ],
-  "optionalDependencies": {
-  },
+  "optionalDependencies": {},
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "6.26.0",
