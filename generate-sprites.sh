@@ -42,7 +42,7 @@ createIconSet () {
 		colorize $col1 $col2 $2 $col3
 	done < $1
 
-	${spriteZeroPath} ${outputDir}/$2 temp/$2
+	${spriteZeroPath} ${outputDir}/$2 temp/$2 --ratio=2
 	${spriteZeroPath} ${outputDir}/$2@2x temp/$2  --ratio=4
 }
 
