@@ -4,7 +4,7 @@ Uses maki icon set for most sprites.
 
 There are two ways to use these styles
 - use the StyleFactory class which will setup the style for you with your settings (Usage below) <sub><sup>[todo npm publish package]</sup></sub> 
-- or just grab the jsons style file directley and string replace the template parameters <sub><sup> (ie {tile_server_xyz_url}, {localization_name}, {resource_url})</sup></sub>  
+- or just grab the style's json file directley and string replace the template parameters <sub><sup> (ie {tile_server_xyz_url}, {localization_name}, {resource_url})</sup></sub>  
  
 
 ### Usage
@@ -32,16 +32,17 @@ A bright pastel-ish base map style by Apollo Mapping that's MIT licensed and inc
 
 
 Constant Name:  ``` APOLLO_BRIGHT_STYLE ```
-![Apollo Style Screenshot](https://github.com/apollomapping/ap-tilezen-mapbox-styles/raw/master/apollo-bright-screenshot.png?raw=true)
-![Apollo Style Screenshot 2](https://github.com/apollomapping/ap-tilezen-mapbox-styles/raw/master/apollo-bright-screenshot2.png?raw=true)
 
+Apollo Style Screenshots             |  2
+:-------------------------:|:-------------------------:
+![Apollo Style Screenshot](https://github.com/apollomapping/ap-tilezen-mapbox-styles/raw/master/docs/apollo-bright-screenshot.png?raw=true)   |  ![Apollo Style Screenshot 2](https://github.com/apollomapping/ap-tilezen-mapbox-styles/raw/master/docs/apollo-bright-screenshot2.png?raw=true)
 
 #####Zen Style 
 A continuation of the mapbox style started by mapzen [here](https://github.com/mapzen/mapboxgl-vector-tiles).
 The Zen style is more on the minimalistic than the Apollo style.
 
 Constant Name:  ``` ZEN_STYLE ```
-![Zen Style screenshot](https://github.com/apollomapping/ap-tilezen-mapbox-styles/raw/master/zen-style-screenshot.png?raw=true)
+![Zen Style screenshot](https://github.com/apollomapping/ap-tilezen-mapbox-styles/raw/master/docs/zen-style-screenshot.png?raw=true)
 
 
 #####Toner Style 
@@ -50,7 +51,7 @@ Toner is designed to mostly look like Stamen's minimalistic black and white "Ton
 Stamen's Toner repository can be found [here](https://github.com/citytracking/toner).
 
 Constant Name:  ``` TONER_STYLE ```
-![Toner screenshot](https://github.com/apollomapping/ap-tilezen-mapbox-styles/raw/master/toner-screenshot.png?raw=true)
+![Toner screenshot](https://github.com/apollomapping/ap-tilezen-mapbox-styles/raw/master/docs/toner-screenshot.png?raw=true)
 
 ### Deploying and generating sprites
 #### Note nvm with node 8.9 must be installed to run the sprite generation script
