@@ -1,0 +1,16 @@
+parking,#000000,#ffffff
+bicycle-share,#000000,#ffffff
+mountain,#000000,#ffffff
+college,#000000,#ffffff
+school,#000000,#ffffff
+airport,#000000,#ffffff
+circle,#000000,#ffffff
+park,#000000,#ffffff
+park-alt1,#000000,#ffffff
+cemetery,#000000,#ffffff
+college,#000000,#ffffff
+school,#000000,#ffffff
+museum,#000000,#ffffff
+library,#000000,#ffffff
+hospital,#000000,#ffffff
+#have to keep last line or it bash script dicks up reading csv file

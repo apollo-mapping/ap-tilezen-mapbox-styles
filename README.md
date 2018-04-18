@@ -1,6 +1,11 @@
 # ap-tilezen-mapbox-styles
-Mapbox styles for tilezen vector tile data format. Uses maki icon set for sprites.
+Three mapbox styles for tilezen/mapzen vector data format. The styles are made for mapbox style spec version 8 and tested in mapbox GL JS v0.44.1. 
+Uses maki icon set for most sprites. 
 
+There are two ways to use these styles
+- use the StyleFactory class which will setup the style for you with your settings (Usage below) <sub><sup>[todo npm publish package]</sup></sub> 
+- or just grab the jsons style file directley and string replace the template parameters <sub><sup> (ie {tile_server_xyz_url}, {localization_name}, {resource_url})</sup></sub>  
+ 
 
 ### Usage
 ```javascript
@@ -13,7 +18,7 @@ const styleFactory = new StyleFactory({
     resourceUrl: "https://s3-us-west-1.amazonaws.com/osm-vector-tiles-apollomapping",
     // localization type to use for certain labels. Pass inn ISO 639-1 two-letter language code 
     // ie "en" which turns {name} into {name:en} and defaults to {name} if nothing is passed in.
-    // only used for country, region, ocean and sea labels as localization properties did not work with others
+    // Only used for major and minort city, country, region, ocean and sea labels.
     localization: "en"
 });
 
@@ -23,19 +28,35 @@ const myMapBoxStyle = styleFactory.createStyle(APOLLO_BRIGHT_STYLE);
 
 #### Available styles
 #####Apollo Bright Style 
-A unique base map style by Apollo Mapping thats MIT licensed and includes natural earth raster source at low zoom levels.
+A bright pastel-ish base map style by Apollo Mapping that's MIT licensed and includes Natural Earth II environment raster source at low zoom levels.
 
 
 Constant Name:  ``` APOLLO_BRIGHT_STYLE ```
+![Apollo Style Screenshot](https://github.com/apollomapping/ap-tilezen-mapbox-styles/raw/master/apollo-bright-screenshot.png?raw=true)
+![Apollo Style Screenshot 2](https://github.com/apollomapping/ap-tilezen-mapbox-styles/raw/master/apollo-bright-screenshot2.png?raw=true)
+
 
 #####Zen Style 
-A continuation of the mapbox style started by mapzen at https://github.com/mapzen/mapboxgl-vector-tiles.
+A continuation of the mapbox style started by mapzen [here](https://github.com/mapzen/mapboxgl-vector-tiles).
 The Zen style is more on the minimalistic than the Apollo style.
 
 Constant Name:  ``` ZEN_STYLE ```
+![Zen Style screenshot](https://github.com/apollomapping/ap-tilezen-mapbox-styles/raw/master/zen-style-screenshot.png?raw=true)
+
+
+#####Toner Style 
+Toner is designed to mostly look like Stamen's minimalistic black and white "Toner" style.
+
+Stamen's Toner repository can be found [here](https://github.com/citytracking/toner).
+
+Constant Name:  ``` TONER_STYLE ```
+![Toner screenshot](https://github.com/apollomapping/ap-tilezen-mapbox-styles/raw/master/toner-screenshot.png?raw=true)
 
 ### Deploying and generating sprites
 #### Note nvm with node 8.9 must be installed to run the sprite generation script
+<sub><sup>[you can use Apollo Mapping's public sprite and fontstack resources if you do not want to do this.
+ URLs are in the javascript example above]</sup></sub>  
+ 
 8.9 is required for spritezero no other version will work not 9.x not 8.6
  
 Sprites can be regenerated with the generate-sprites.sh bash script. It reads from the style .csv files that contain pairs of
@@ -47,6 +68,9 @@ You can also use the simple deploy.sh script that you pass in your bucket name a
 
 
 ### Deploying and generating glyphs/fonts
+<sub><sup>[you can use Apollo Mapping's public sprite and fontstack resources if you do not want to do this.
+ URLs are in the javascript example above]</sup></sub>  
+ 
 Use this openmaptiles fork https://github.com/m-abboud/fonts
 Run the generate.js script followed by the concat.js script (which concats all fonts with their noto equivelents)
 Upload the generated fonts to your static web server at this location: {your_resource_url}/tile_fonts/

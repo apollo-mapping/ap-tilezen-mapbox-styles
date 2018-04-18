@@ -48,5 +48,6 @@ createIconSet () {
 
 createIconSet ${iconConfigPath}apollo-bright-icons.csv apollo-bright-icons
 createIconSet ${iconConfigPath}zen-icons.csv zen-icons
+createIconSet ${iconConfigPath}toner-icons.csv toner-icons
 
 rm -rf temp
