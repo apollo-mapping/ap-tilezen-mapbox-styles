@@ -48,7 +48,7 @@
                 ]
             ],
             "paint": {
-                "fill-color": "#c2cd44"
+                "fill-color": "rgba(171, 205, 68, 0.67)"
             },
             "minzoom": 4
         },
@@ -68,7 +68,7 @@
             ],
             "layout": {},
             "paint": {
-                "fill-color": "#9EB03A"
+                "fill-color": "rgba(154, 179, 78, 0.79)"
             }
         },
         {
@@ -830,7 +830,7 @@
                 "text-transform": "uppercase"
             },
             "paint": {
-                "text-color": "rgba(116, 177, 243, 1)",
+                "text-color": "rgba(45, 66, 90, 1)",
                 "text-halo-color": "rgba(255, 255, 255, 1)",
                 "text-halo-width": 0.3,
                 "text-halo-blur": 0.3
@@ -868,7 +868,7 @@
                 "text-transform": "uppercase"
             },
             "paint": {
-                "text-color": "rgba(116, 177, 243, 1)",
+                "text-color": "rgba(45, 66, 90, 1)",
                 "text-halo-color": "rgba(255, 255, 255, 1)",
                 "text-halo-width": 0.3,
                 "text-halo-blur": 0.3
@@ -905,7 +905,7 @@
                 "text-size": 10
             },
             "paint": {
-                "text-color": "rgba(222, 239, 253, 1)"
+                "text-color": "rgba(45, 66, 90, 1)"
             }
         },
         {
@@ -937,7 +937,7 @@
                 "text-size": 10
             },
             "paint": {
-                "text-color": "rgba(222, 239, 253, 1)"
+                "text-color": "rgba(45, 66, 90, 1)"
             }
         },
         {
@@ -1339,7 +1339,7 @@
             },
             "paint": {
                 "text-color": "#FFF",
-                "text-halo-color": "#c0c4c2",
+                "text-halo-color": "rgba(97, 98, 98, 1)",
                 "text-halo-width": 1,
                 "text-halo-blur": 1,
                 "text-opacity": 1
