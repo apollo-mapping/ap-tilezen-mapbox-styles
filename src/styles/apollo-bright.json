@@ -126,7 +126,6 @@
                 "fill-color": "rgba(156, 228, 146, 0.75)"
             }
         },
-
         {
             "id": "farm-land-fill",
             "type": "fill",
@@ -366,8 +365,22 @@
             "source-layer": "buildings",
             "minzoom": 15,
             "paint": {
-                "fill-outline-color": "rgba(218, 215, 184, 1)",
                 "fill-color": "rgba(226, 218, 193, 1)"
+            }
+        },
+        {
+            "id": "hospital-building-fill",
+            "filter": [
+                "==",
+                "kind_detail",
+                "hospital"
+            ],
+            "type": "fill",
+            "source": "osm",
+            "source-layer": "buildings",
+            "minzoom": 13,
+            "paint": {
+                "fill-color": "rgba(255, 155, 157, 0.89)"
             }
         },
         {
@@ -1714,6 +1727,15 @@
                     "kind",
                     "volcano",
                     "peak"
+                ],
+                [
+                    "has",
+                    "elevation"
+                ],
+                [
+                    ">",
+                    "elevation",
+                    "2700"
                 ]
             ],
             "layout": {
@@ -1884,6 +1906,80 @@
                 "text-halo-width": 1,
                 "text-halo-blur": 1,
                 "text-color": "#3B45A0"
+            }
+        },
+        {
+            "id": "library-symbol",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "pois",
+            "minzoom": 14,
+            "maxzoom": 24,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "kind",
+                    "library"
+                ]
+            ],
+            "layout": {
+                "icon-image": "library-11",
+                "icon-size": 0.8,
+                "text-field": "{name}",
+                "text-offset": [
+                    0,
+                    0.8
+                ],
+                "text-anchor": "top",
+                "text-size": 11,
+                "text-font": [
+                    "Roboto Regular",
+                    "Noto Sans Regular"
+                ]
+            },
+            "paint": {
+                "text-halo-color": "rgba(255, 255, 255, .7)",
+                "text-halo-width": 1,
+                "text-halo-blur": 1,
+                "text-color": "#3B45A0"
+            }
+        },
+        {
+            "id": "hospital-symbol",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "pois",
+            "minzoom": 11,
+            "maxzoom": 24,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "kind",
+                    "hospital"
+                ]
+            ],
+            "layout": {
+                "icon-image": "hospital-11",
+                "icon-size": 0.8,
+                "text-field": "{name}",
+                "text-offset": [
+                    0,
+                    0.8
+                ],
+                "text-anchor": "top",
+                "text-size": 11,
+                "text-font": [
+                    "Roboto Medium",
+                    "Noto Sans Bold"
+                ]
+            },
+            "paint": {
+                "text-halo-color": "rgba(255, 255, 255, 0.8)",
+                "text-halo-width": 1,
+                "text-halo-blur": 1,
+                "text-color": "rgba(236, 137, 141, 1)"
             }
         }
     ]

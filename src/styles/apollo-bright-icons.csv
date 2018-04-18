@@ -11,4 +11,6 @@ cemetery,#227936,#ffffff
 college,#3B45A0
 school,#3B45A0
 museum,#3B45A0
+library,#3B45A0
+hospital,#ff0034,#ffffff
 #have to keep last line or it bash script dicks up reading csv file

@@ -21,11 +21,18 @@ const myMapBoxStyle = styleFactory.createStyle(APOLLO_BRIGHT_STYLE);
 ```
 
 
-##### Available style constant names
-```
-APOLLO_BRIGHT_STYLE
-ZEN_STYLE
-```
+#### Available styles
+#####Apollo Bright Style 
+A unique base map style by Apollo Mapping thats MIT licensed and includes natural earth raster source at low zoom levels.
+
+
+Constant Name:  ``` APOLLO_BRIGHT_STYLE ```
+
+#####Zen Style 
+A continuation of the mapbox style started by mapzen at https://github.com/mapzen/mapboxgl-vector-tiles.
+The Zen style is more on the minimalistic than the Apollo style.
+
+Constant Name:  ``` ZEN_STYLE ```
 
 ### Deploying and generating sprites
 #### Note nvm with node 8.9 must be installed to run the sprite generation script
