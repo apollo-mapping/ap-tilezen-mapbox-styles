@@ -1,3 +1,14 @@
 parking,#2B8255
 bicycle-share,#2B8255
+mountain,#604034
+college,#3D3D3D
+school,#3D3D3D
+airport,#8042AF,#ffffff
+circle,#000000,#ffffff
+park,#227936,#ffffff
+park-alt1,#227936,#ffffff
+cemetery,#227936,#ffffff
+college,#3B45A0
+school,#3B45A0
+museum,#3B45A0
 #have to keep last line or it bash script dicks up reading csv file

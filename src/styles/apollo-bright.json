@@ -58,6 +58,25 @@
             }
         },
         {
+            "id": "airport-landuse-fill",
+            "type": "fill",
+            "source": "osm",
+            "source-layer": "landuse",
+            "filter": [
+                "all",
+                [
+                    "in",
+                    "kind",
+                    "aeroway",
+                    "aerodrome"
+                ]
+            ],
+            "paint": {
+                "fill-color": "rgba(251, 241, 241, 1)"
+            },
+            "minzoom": 4
+        },
+        {
             "id": "park-fill",
             "type": "fill",
             "source": "osm",
@@ -107,25 +126,7 @@
                 "fill-color": "rgba(156, 228, 146, 0.75)"
             }
         },
-        {
-            "id": "airport-landuse-fill",
-            "type": "fill",
-            "source": "osm",
-            "source-layer": "landuse",
-            "filter": [
-                "all",
-                [
-                    "in",
-                    "kind",
-                    "aeroway",
-                    "aerodrome"
-                ]
-            ],
-            "paint": {
-                "fill-color": "rgba(251, 241, 241, 1)"
-            },
-            "minzoom": 4
-        },
+
         {
             "id": "farm-land-fill",
             "type": "fill",
