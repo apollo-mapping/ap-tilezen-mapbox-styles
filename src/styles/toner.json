@@ -1386,7 +1386,7 @@
                 "text-max-width": 10
             },
             "paint": {
-                "text-color": "#FFF",
+                "text-color": "#000000",
                 "text-opacity": 1,
                 "text-halo-color": "#FFFFFF",
                 "text-halo-width": 2,
@@ -1440,7 +1440,7 @@
                 "text-max-width": 10
             },
             "paint": {
-                "text-color": "#FFF",
+                "text-color": "#000000",
                 "text-opacity": 1,
                 "text-halo-color": "#FFFFFF",
                 "text-halo-width": 2,
