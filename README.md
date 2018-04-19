@@ -1,24 +1,23 @@
 # ap-tilezen-mapbox-styles
-Three mapbox styles for tilezen/mapzen vector data format. The styles are made for mapbox style spec version 8 and tested in mapbox GL JS v0.44.1. 
+Three mapbox styles for tilezen/mapzen vector tile format. The styles are made for mapbox style spec version 8 and tested in mapbox GL JS v0.44.1. 
 Uses maki icon set for most sprites. 
 
 There are two ways to use these styles
+- just grab the style's json file directley and string replace the template parameters <sub><sup> (ie {tile_server_xyz_url}, {localization_name}, {resource_url})</sup></sub>
 - use the StyleFactory class which will setup the style for you with your settings (Usage below) <sub><sup>[todo npm publish package]</sup></sub> 
-- or just grab the style's json file directley and string replace the template parameters <sub><sup> (ie {tile_server_xyz_url}, {localization_name}, {resource_url})</sup></sub>  
- 
 
 ### Usage
 ```javascript
-import {StyleFactory, APOLLO_BRIGHT_STYLE, ZEN_STYLE} from "@apollomapping/ap-tilezen-mapbox-styles";
+import {StyleFactory, APOLLO_BRIGHT_STYLE, ZEN_STYLE, TONER_STYLE} from "@apollomapping/ap-tilezen-mapbox-styles";
 
 const styleFactory = new StyleFactory({
     tileUrl: "https://your-vector-server.com/all/{z}/{x}/{y}.mvt",
     // resource url is the base location for your style's sprites and fonts    
     // you can use our public sprite and font resources whose url is below (for now at least)
     resourceUrl: "https://s3-us-west-1.amazonaws.com/osm-vector-tiles-apollomapping",
-    // localization type to use for certain labels. Pass inn ISO 639-1 two-letter language code 
+    // localization type to use for certain labels. Pass in ISO 639-1 two-letter language code 
     // ie "en" which turns {name} into {name:en} and defaults to {name} if nothing is passed in.
-    // Only used for major and minort city, country, region, ocean and sea labels.
+    // Only used for major and minor city, country, region, ocean and sea labels.
     localization: "en"
 });
 
@@ -27,30 +26,26 @@ const myMapBoxStyle = styleFactory.createStyle(APOLLO_BRIGHT_STYLE);
 
 
 #### Available styles
-#####Apollo Bright Style 
+#### Apollo Bright Style 
 A bright pastel-ish base map style by Apollo Mapping that's MIT licensed and includes Natural Earth II environment raster source at low zoom levels.
 
-
-Constant Name:  ``` APOLLO_BRIGHT_STYLE ```
 
 Apollo Style Screenshots             |  2
 :-------------------------:|:-------------------------:
 ![Apollo Style Screenshot](https://github.com/apollomapping/ap-tilezen-mapbox-styles/raw/master/docs/apollo-bright-screenshot.png?raw=true)   |  ![Apollo Style Screenshot 2](https://github.com/apollomapping/ap-tilezen-mapbox-styles/raw/master/docs/apollo-bright-screenshot2.png?raw=true)
 
-#####Zen Style 
+##### Zen Style 
 A continuation of the mapbox style started by mapzen [here](https://github.com/mapzen/mapboxgl-vector-tiles).
 The Zen style is more on the minimalistic than the Apollo style.
 
-Constant Name:  ``` ZEN_STYLE ```
 ![Zen Style screenshot](https://github.com/apollomapping/ap-tilezen-mapbox-styles/raw/master/docs/zen-style-screenshot.png?raw=true)
 
 
-#####Toner Style 
+##### Toner Style 
 Toner is designed to mostly look like Stamen's minimalistic black and white "Toner" style.
 
 Stamen's Toner repository can be found [here](https://github.com/citytracking/toner).
 
-Constant Name:  ``` TONER_STYLE ```
 ![Toner screenshot](https://github.com/apollomapping/ap-tilezen-mapbox-styles/raw/master/docs/toner-screenshot.png?raw=true)
 
 ### Deploying and generating sprites
