@@ -84,7 +84,7 @@
                 ]
             ],
             "paint": {
-                "fill-color": "rgba(255, 239, 243, 0.51)"
+                "fill-color": "#bfbfbf"
             },
             "layout": {
                 "visibility": "visible"
