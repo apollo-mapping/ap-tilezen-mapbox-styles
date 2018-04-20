@@ -3,3 +3,5 @@ tests
 .git
 .flowconfig
 .babelrc
+example
+temp

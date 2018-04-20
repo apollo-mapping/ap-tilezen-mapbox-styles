@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'/>
+    <title>Display a map</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no'/>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.js'></script>
+    <script src='https://s3-us-west-1.amazonaws.com/osm-vector-tiles-apollomapping/style/ap-tilezen-mapbox-styles.min.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.2/mapbox-gl.css' rel='stylesheet'/>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        #switcher {
+            position: absolute;
+            background: whitesmoke;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 12px;
+            padding: 3px;
+        }
+    </style>
+</head>
+<body>
+<div id='map'>
+</div>
+<div id="switcher">
+</div>
+<div style="position: absolute; bottom: 5px; right: 5px; background: hsla(0,0%,100%,.7)">
+    <div style="font-size: 11px; font-family:Helvetica, Arial, sans-serif;">
+        (Using limited static cache of tiles so note not all tiles will appear)
+    </div>
+    <div style="font-size: 11px; font-family:Helvetica, Arial, sans-serif;">
+        ©<a href="http://osm.org/copyright">OpenStreetMap</a>
+        Who's On First <a href="https://whosonfirst.mapzen.com#License">License</a></div>
+</div>
+<script>
+    const styleFactory = new apolloStyles.StyleFactory({
+        tileUrl: "https://demo-tiles.apollomapping.com/all/{z}/{x}/{y}.mvt?key=1a9648aba8b441e39d49f729101a8ea7",
+        resourceUrl: "https://s3-us-west-1.amazonaws.com/osm-vector-tiles-apollomapping",
+        localization: "en"
+    });
+
+    const styles = [
+        styleFactory.createStyle(apolloStyles.APOLLO_BRIGHT_STYLE),
+        styleFactory.createStyle(apolloStyles.TONER_STYLE),
+        styleFactory.createStyle(apolloStyles.ZEN_STYLE)
+    ];
+
+    const switcherDiv = document.getElementById("switcher");
+    for (var i = 0; i < styles.length; i++) {
+        var styleOn = styles[i];
+        var radio = "<input id='" + styleOn.id +
+            "' onclick='switchStyle(" + i + ")' type='radio' name='styles' value='satellite'>" +
+            "<label for='" + styleOn.id + "'>" + styleOn.name + "</label>";
+
+        switcherDiv.insertAdjacentHTML('beforeend', radio);
+    }
+
+    function switchStyle(index) {
+        map.setStyle(styles[index]);
+    }
+
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: styles[0],
+        zoom: 0
+    });
+</script>
+
+</body>
+</html>

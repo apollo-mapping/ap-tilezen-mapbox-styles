@@ -953,7 +953,6 @@
                 ]
             ],
             "layout": {
-                "icon-image": "park-alt1-11",
                 "icon-size": 1,
                 "text-field": "{name}",
                 "text-offset": [
@@ -991,8 +990,6 @@
                 ]
             ],
             "layout": {
-                "icon-image": "park-alt1-11",
-                "icon-size": 1,
                 "text-field": "{name}",
                 "text-offset": [
                     0,
@@ -1028,8 +1025,6 @@
                 ]
             ],
             "layout": {
-                "icon-image": "cemetery-11",
-                "icon-size": 1,
                 "text-field": "{name}",
                 "text-offset": [
                     0,
@@ -1461,8 +1456,6 @@
                 ]
             ],
             "layout": {
-                "icon-image": "airport-15",
-                "icon-size": 1,
                 "text-field": {
                     "stops": [
                         [
