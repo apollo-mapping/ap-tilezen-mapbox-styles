@@ -2,6 +2,8 @@
 Three mapbox styles for tilezen/mapzen vector tile format. The styles are made for mapbox style spec version 8 and tested in mapbox GL JS v0.44.1. 
 Uses maki icon set for most sprites. 
 
+[Demo here](https://apollomapping.github.io/ap-tilezen-mapbox-styles/demo/demo.html)  
+
 There are two ways to use these styles
 - just grab the style's json file directley and string replace the template parameters <sub><sup> (ie {tile_server_xyz_url}, {localization_name}, {resource_url})</sup></sub>
 - use the StyleFactory class which will setup the style for you with your settings (Usage below) <sub><sup>[todo npm publish package]</sup></sub> 
