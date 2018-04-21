@@ -11,7 +11,7 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    version="1.1"
    id="svg4764"
-   inkscape:version="0.92.2 5c3e80d, 2017-08-06"
+   inkscape:version="0.91 r13725"
    sodipodi:docname="generic-shield-2.svg"
    x="0px"
    y="0px"
@@ -37,13 +37,13 @@
      id="namedview4225"
      showgrid="false"
      inkscape:zoom="22.627417"
-     inkscape:cx="-3.1098923"
+     inkscape:cx="4.845059"
      inkscape:cy="4.15607"
      inkscape:window-x="0"
      inkscape:window-y="1"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg4764" /><path
-     d="m 10.822581,5.5 c 0,2.9396021 -2.3829788,5.322581 -5.3225809,5.322581 -2.9396021,0 -5.32258074,-2.3829789 -5.32258074,-5.322581 0,-2.9396022 2.38297864,-5.32258064 5.32258074,-5.32258064 2.9396021,0 5.3225809,2.38297844 5.3225809,5.32258064 z"
+     fill="#ffffff"
+     d="M10,5.5C10,7.9853,7.9853,10,5.5,10S1,7.9853,1,5.5S3.0147,1,5.5,1S10,3.0147,10,5.5z"
      id="path4223"
-     style="opacity:1;fill:#ffffff;stroke:#000000;stroke-width:0.35483873;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-     inkscape:connector-curvature="0" /></svg>
+     style="stroke:#000000;stroke-opacity:1;opacity:0.99999999;stroke-width:0.3;stroke-miterlimit:4;stroke-dasharray:none" /></svg>
