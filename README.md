@@ -15,7 +15,7 @@ import {StyleFactory, APOLLO_BRIGHT_STYLE, ZEN_STYLE, TONER_STYLE} from "@apollo
 const styleFactory = new StyleFactory({
     tileUrl: "https://your-vector-server.com/all/{z}/{x}/{y}.mvt",
     // resource url is the base location for your style's sprites and fonts    
-    // you can use our public sprite and font stack whose url is below (for now at least)
+    // you can use our public sprite and font stack whose url is below
     resourceUrl: "https://s3-us-west-1.amazonaws.com/osm-vector-tiles-apollomapping",
     // localization type to use for certain labels. Pass in ISO 639-1 two-letter language code 
     // ie "en" which turns {name} into {name:en} and defaults to {name} if nothing is passed in.
@@ -52,7 +52,7 @@ Stamen's Toner repository can be found [here](https://github.com/citytracking/to
 
 ### Deploying and generating sprites
 #### Note nvm with node 8.9 must be installed to run the sprite generation script
-<sub><sup>[you can use Apollo Mapping's public sprite and fontstack resources if you do not want to do this.
+<sub><sup>[you can use Apollo Mapping's public sprite and fontstack resources if you do not want to do this or font generation.
  URLs are in the javascript example above]</sup></sub>  
  
 8.9 is required for spritezero no other version will work not 9.x not 8.6
@@ -66,9 +66,6 @@ You can also use the simple deploy.sh script that you pass in your bucket name a
 
 
 ### Deploying and generating glyphs/fonts
-<sub><sup>[you can use Apollo Mapping's public sprite and fontstack resources if you do not want to do this.
- URLs are in the javascript example above]</sup></sub>  
- 
 Use this openmaptiles fonts fork https://github.com/m-abboud/fonts
 Run the generate.js script followed by the concat.js script which concats all fonts with their noto equivelents. If you do not
 concat fonts together passing in arrays of font names does not work. A better way might be to have a server that concats them
@@ -76,19 +73,9 @@ on demand but there's really only so many combinations that make sense, merging 
 only need to merge fonts for unicode characters not in the base font and noto includes all of them.
 
 Then upload the generated fonts to your static web server at this location: {your_resource_url}/tile_fonts/
-  
-[todo add font generation script]
-
 
 ### Shield Icons
 The shield icons come from https://wiki.openstreetmap.org/wiki/Custom_Highway_Shields with slight modifications.
-
-<sub><sup>[sidenote, we currentley only use one shield image meant for two characters for interstate and us highway's. 
-If you use the streth fit style property it makes the icons look like shit. So what others do is have multiple images 
-for the different lengths ofthe shield text from 1 to 8 or so. In order to chose the right size we need to replace 
-in shield text length to the icon name like shield-icon-{x}. mapbox deals with this by having shield text length 
-property in the feature, unfortunently tilezen's stack currentley doesnt shield text length so we need to create 
-a PR to add it at some point]</sup></sub> 
 
 The license notices for the icons from the wiki state that they are in the public domain
 
