@@ -1687,11 +1687,215 @@
                 "icon-size": 1.8,
                 "text-offset": [
                     0,
-                    0.5
+                    0.3
                 ]
             },
             "paint": {
                 "text-color": "#FFF",
+                "text-opacity": 1
+            }
+        },
+        {
+            "id": "pa-shield-label",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "roads",
+            "minzoom": 8,
+            "maxzoom": 14,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
+                    "kind",
+                    "highway"
+                ],
+                [
+                    "has",
+                    "shield_text"
+                ],
+                [
+                    "in",
+                    "network",
+                    "US:PA"
+                ]
+            ],
+            "layout": {
+                "text-field": "{shield_text}",
+                "text-size": 10,
+                "text-font": [
+                    "Roboto Bold",
+                    "Noto Sans Bold"
+                ],
+                "symbol-placement": "line",
+                "symbol-spacing": 1000,
+                "icon-image": [
+                    "concat",
+                    "us-highway-pa-",
+                    [
+                        "to-string",
+                        [
+                            "length",
+                            [
+                                "string",
+                                [
+                                    "get",
+                                    "shield_text"
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+                "text-rotation-alignment": "viewport",
+                "icon-rotation-alignment": "viewport",
+                "icon-size": 1.8,
+                "text-offset": [
+                    0,
+                    0.3
+                ]
+            },
+            "paint": {
+                "text-color": "#000",
+                "text-opacity": 1
+            }
+        },
+        {
+            "id": "al-shield-label",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "roads",
+            "minzoom": 8,
+            "maxzoom": 14,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
+                    "kind",
+                    "highway"
+                ],
+                [
+                    "has",
+                    "shield_text"
+                ],
+                [
+                    "in",
+                    "network",
+                    "US:AL"
+                ]
+            ],
+            "layout": {
+                "text-field": "{shield_text}",
+                "text-size": 10,
+                "text-font": [
+                    "Roboto Bold",
+                    "Noto Sans Bold"
+                ],
+                "symbol-placement": "line",
+                "symbol-spacing": 1000,
+                "icon-image": [
+                    "concat",
+                    "us-highway-al-",
+                    [
+                        "to-string",
+                        [
+                            "length",
+                            [
+                                "string",
+                                [
+                                    "get",
+                                    "shield_text"
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+                "text-rotation-alignment": "viewport",
+                "icon-rotation-alignment": "viewport",
+                "icon-size": 1.8,
+                "text-offset": [
+                    0,
+                    0.1
+                ]
+            },
+            "paint": {
+                "text-color": "#000",
+                "text-opacity": 1
+            }
+        },
+        {
+            "id": "fl-shield-label",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "roads",
+            "minzoom": 8,
+            "maxzoom": 14,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
+                    "kind",
+                    "highway"
+                ],
+                [
+                    "has",
+                    "shield_text"
+                ],
+                [
+                    "in",
+                    "network",
+                    "US:FL"
+                ]
+            ],
+            "layout": {
+                "text-field": "{shield_text}",
+                "text-size": 10,
+                "text-font": [
+                    "Roboto Bold",
+                    "Noto Sans Bold"
+                ],
+                "symbol-placement": "line",
+                "symbol-spacing": 1000,
+                "icon-image": [
+                    "concat",
+                    "us-highway-fl-",
+                    [
+                        "to-string",
+                        [
+                            "length",
+                            [
+                                "string",
+                                [
+                                    "get",
+                                    "shield_text"
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+                "text-rotation-alignment": "viewport",
+                "icon-rotation-alignment": "viewport",
+                "icon-size": 1.8,
+                "text-offset": [
+                    0,
+                    0.3
+                ]
+            },
+            "paint": {
+                "text-color": "#000",
                 "text-opacity": 1
             }
         },
@@ -1756,6 +1960,145 @@
                 "text-offset": [
                     0,
                     0.5
+                ]
+            },
+            "paint": {
+                "text-color": "#000",
+                "text-opacity": 1
+            }
+        },
+        {
+            "id": "arizona-shield-label",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "roads",
+            "minzoom": 8,
+            "maxzoom": 14,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
+                    "kind",
+                    "highway"
+                ],
+                [
+                    "has",
+                    "shield_text"
+                ],
+                [
+                    "in",
+                    "network",
+                    "US:AZ"
+                ]
+            ],
+            "layout": {
+                "text-field": "{shield_text}",
+                "text-size": 10,
+                "text-font": [
+                    "Roboto Bold",
+                    "Noto Sans Bold"
+                ],
+                "symbol-placement": "line",
+                "symbol-spacing": 1000,
+                "icon-image": [
+                    "concat",
+                    "us-highway-az-",
+                    [
+                        "to-string",
+                        [
+                            "length",
+                            [
+                                "string",
+                                [
+                                    "get",
+                                    "shield_text"
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+                "text-rotation-alignment": "viewport",
+                "icon-rotation-alignment": "viewport",
+                "icon-size": 1.8,
+                "text-offset": [
+                    0,
+                    0.2
+                ]
+            },
+            "paint": {
+                "text-color": "#000",
+                "text-opacity": 1
+            }
+        },
+        {
+            "id": "square-state-shield-label",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "roads",
+            "minzoom": 8,
+            "maxzoom": 14,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
+                    "kind",
+                    "highway"
+                ],
+                [
+                    "has",
+                    "shield_text"
+                ],
+                [
+                    "in",
+                    "network",
+                    "US:IN",
+                    "US:CT",
+                    "US:MT",
+                    "US:IL"
+                ]
+            ],
+            "layout": {
+                "text-field": "{shield_text}",
+                "text-size": 10,
+                "text-font": [
+                    "Roboto Bold",
+                    "Noto Sans Bold"
+                ],
+                "symbol-placement": "line",
+                "symbol-spacing": 1000,
+                "icon-image": [
+                    "concat",
+                    "us-highway-state-square-",
+                    [
+                        "to-string",
+                        [
+                            "length",
+                            [
+                                "string",
+                                [
+                                    "get",
+                                    "shield_text"
+                                ]
+                            ]
+                        ]
+                    ]
+                ],
+                "text-rotation-alignment": "viewport",
+                "icon-rotation-alignment": "viewport",
+                "icon-size": 1.8,
+                "text-offset": [
+                    0,
+                    0.2
                 ]
             },
             "paint": {
@@ -1928,6 +2271,266 @@
                 "text-offset": [
                     0,
                     0.6
+                ]
+            },
+            "paint": {
+                "text-color": "#000000",
+                "text-opacity": 1
+            }
+        },
+        {
+            "id": "hawaii-shield-label",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "roads",
+            "minzoom": 8,
+            "maxzoom": 14,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
+                    "kind",
+                    "highway"
+                ],
+                [
+                    "has",
+                    "shield_text"
+                ],
+                [
+                    "in",
+                    "network",
+                    "US:HI"
+                ]
+            ],
+            "layout": {
+                "text-field": "{shield_text}",
+                "text-size": 10,
+                "text-font": [
+                    "Roboto Medium",
+                    "Noto Sans Bold"
+                ],
+                "symbol-placement": "line",
+                "symbol-spacing": 1000,
+                "icon-image": "us-highway-hi",
+                "text-rotation-alignment": "viewport",
+                "icon-rotation-alignment": "viewport",
+                "icon-size": 1.8,
+                "text-offset": [
+                    0,
+                    0.3
+                ]
+            },
+            "paint": {
+                "text-color": "#000000",
+                "text-opacity": 1
+            }
+        },
+        {
+            "id": "idaho-shield-label",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "roads",
+            "minzoom": 8,
+            "maxzoom": 14,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
+                    "kind",
+                    "highway"
+                ],
+                [
+                    "has",
+                    "shield_text"
+                ],
+                [
+                    "in",
+                    "network",
+                    "US:ID"
+                ]
+            ],
+            "layout": {
+                "text-field": "{shield_text}",
+                "text-size": 10,
+                "text-font": [
+                    "Roboto Medium",
+                    "Noto Sans Bold"
+                ],
+                "symbol-placement": "line",
+                "symbol-spacing": 1000,
+                "icon-image": "us-highway-id",
+                "text-rotation-alignment": "viewport",
+                "icon-rotation-alignment": "viewport",
+                "icon-size": 1.8,
+                "text-offset": [
+                    0.2,
+                    0
+                ]
+            },
+            "paint": {
+                "text-color": "#FFF",
+                "text-opacity": 1
+            }
+        },
+        {
+            "id": "georgia-shield-label",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "roads",
+            "minzoom": 8,
+            "maxzoom": 14,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
+                    "kind",
+                    "highway"
+                ],
+                [
+                    "has",
+                    "shield_text"
+                ],
+                [
+                    "in",
+                    "network",
+                    "US:GA"
+                ]
+            ],
+            "layout": {
+                "text-field": "{shield_text}",
+                "text-size": 8,
+                "text-font": [
+                    "Roboto Medium",
+                    "Noto Sans Bold"
+                ],
+                "symbol-placement": "line",
+                "symbol-spacing": 1000,
+                "icon-image": "us-highway-ga",
+                "text-rotation-alignment": "viewport",
+                "icon-rotation-alignment": "viewport",
+                "icon-size": 1.8,
+                "text-offset": [
+                    0,
+                    0.3
+                ]
+            },
+            "paint": {
+                "text-color": "#000000",
+                "text-opacity": 1
+            }
+        },
+        {
+            "id": "dc-shield-label",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "roads",
+            "minzoom": 8,
+            "maxzoom": 14,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
+                    "kind",
+                    "highway"
+                ],
+                [
+                    "has",
+                    "shield_text"
+                ],
+                [
+                    "in",
+                    "network",
+                    "US:DC"
+                ]
+            ],
+            "layout": {
+                "text-field": "{shield_text}",
+                "text-size": 10,
+                "text-font": [
+                    "Roboto Medium",
+                    "Noto Sans Bold"
+                ],
+                "symbol-placement": "line",
+                "symbol-spacing": 1000,
+                "icon-image": "us-highway-dc",
+                "text-rotation-alignment": "viewport",
+                "icon-rotation-alignment": "viewport",
+                "icon-size": 1.8,
+                "text-offset": [
+                    0,
+                    0.6
+                ]
+            },
+            "paint": {
+                "text-color": "#000000",
+                "text-opacity": 1
+            }
+        },
+        {
+            "id": "arkansas-shield-label",
+            "type": "symbol",
+            "source": "osm",
+            "source-layer": "roads",
+            "minzoom": 8,
+            "maxzoom": 14,
+            "filter": [
+                "all",
+                [
+                    "==",
+                    "$type",
+                    "LineString"
+                ],
+                [
+                    "in",
+                    "kind",
+                    "highway"
+                ],
+                [
+                    "has",
+                    "shield_text"
+                ],
+                [
+                    "in",
+                    "network",
+                    "US:AR"
+                ]
+            ],
+            "layout": {
+                "text-field": "{shield_text}",
+                "text-size": 10,
+                "text-font": [
+                    "Roboto Medium",
+                    "Noto Sans Bold"
+                ],
+                "symbol-placement": "line",
+                "symbol-spacing": 1000,
+                "icon-image": "us-highway-ar",
+                "text-rotation-alignment": "viewport",
+                "icon-rotation-alignment": "viewport",
+                "icon-size": 1.8,
+                "text-offset": [
+                    -0.1,
+                    0.1
                 ]
             },
             "paint": {
