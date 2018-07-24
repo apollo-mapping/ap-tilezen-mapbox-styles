@@ -1,0 +1,27 @@
+{
+    "id": "digital-globe-imagery-basemap",
+    "version": 8,
+    "name": "DigitalGlobe Imagery",
+    "attribution": "&copy; DigitalGlobe; <a href=\"http://bit.ly/mapsapiview\">Terms of Use</a>",
+    "sources": {
+        "dg_raster": {
+            "tileSize": 256,
+            "tiles": [
+                "{satellite_raster_xyz_url}"
+            ],
+            "type": "raster"
+        }
+    },
+    "sprite": "{resource_url}/sprites/apollo-bright-icons",
+    "glyphs": "{resource_url}/tile_fonts/{fontstack}/{range}.pbf",
+    "layers": [
+        {
+            "id": "dg_raster",
+            "type": "raster",
+            "source": "dg_raster",
+            "layout": {
+                "visibility": "visible"
+            }
+        }
+    ]
+}

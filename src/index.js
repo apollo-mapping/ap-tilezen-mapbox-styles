@@ -1,2 +1,17 @@
-import {StyleFactory, APOLLO_BRIGHT_STYLE, ZEN_STYLE, TONER_STYLE} from "./StyleFactory"
-export {StyleFactory, APOLLO_BRIGHT_STYLE, ZEN_STYLE, TONER_STYLE};
+import {
+    StyleFactory,
+    APOLLO_BRIGHT_STYLE,
+    ZEN_STYLE,
+    TONER_STYLE,
+    SATELLITE_STYLE,
+    APOLLO_HYBRID_SATELLITE_STYLE
+} from "./StyleFactory"
+
+export {
+    StyleFactory,
+    APOLLO_BRIGHT_STYLE,
+    ZEN_STYLE,
+    TONER_STYLE,
+    SATELLITE_STYLE,
+    APOLLO_HYBRID_SATELLITE_STYLE
+};
