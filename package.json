@@ -20,7 +20,9 @@
     "mapbox",
     "tilezen"
   ],
-  "optionalDependencies": {},
+  "optionalDependencies": {
+    "@mapbox/maki": "4.0.0"
+  },
   "devDependencies": {
     "@mapbox/spritezero-cli": "2.1.0",
     "babel-cli": "^6.26.0",
@@ -44,7 +46,6 @@
     "yargs": "^10.0.3"
   },
   "dependencies": {
-    "@mapbox/maki": "^4.0.0"
   },
   "jest": {
     "collectCoverageFrom": [
