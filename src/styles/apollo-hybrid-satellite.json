@@ -69,10 +69,10 @@
                 "text-size": 12
             },
             "paint": {
-                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-color": "rgba(0, 0, 0, 1)",
                 "text-halo-width": 1,
                 "text-halo-blur": 1,
-                "text-color": "rgba(30, 30, 30, 1)"
+                "text-color": "rgba(243, 243, 243, 1)"
             }
         },
         {
@@ -121,9 +121,10 @@
                 }
             },
             "paint": {
-                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-color": "rgba(0, 0, 0, 1)",
                 "text-halo-width": 1,
-                "text-halo-blur": 1
+                "text-halo-blur": 1,
+                "text-color": "rgba(243, 243, 243, 1)"
             }
         },
         {
@@ -153,16 +154,17 @@
             ],
             "layout": {
                 "text-font": [
-                    "Roboto Bold",
+                    "Roboto Medium",
                     "Noto Sans Bold"
                 ],
                 "text-field": "{localization_name}",
                 "text-size": 12
             },
             "paint": {
-                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-color": "rgba(0, 0, 0, 1)",
                 "text-halo-width": 1,
-                "text-halo-blur": 1
+                "text-halo-blur": 1,
+                "text-color": "rgba(243, 243, 243, 1)"
             }
         },
         {
@@ -187,16 +189,18 @@
             "layout": {
                 "symbol-placement": "line",
                 "text-font": [
-                    "Roboto Regular",
-                    "Noto Sans Regular"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ],
                 "text-field": "{name}",
                 "text-size": 12,
                 "symbol-spacing": 400
             },
             "paint": {
-                "text-color": "rgba(37, 40, 40, 1)",
-                "text-halo-color": "rgba(135, 139, 145, 1)"
+                "text-halo-color": "rgba(0, 0, 0, 1)",
+                "text-halo-width": 1,
+                "text-halo-blur": 1,
+                "text-color": "rgba(243, 243, 243, 1)"
             }
         },
         {
@@ -221,18 +225,18 @@
             "layout": {
                 "symbol-placement": "line",
                 "text-font": [
-                    "Roboto Regular",
-                    "Noto Sans Regular"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ],
                 "text-field": "{name}",
                 "text-size": 12,
                 "symbol-spacing": 400
             },
             "paint": {
-                "text-color": "rgba(37, 40, 40, 1)",
-                "text-halo-color": "rgba(230, 230, 230, .6)",
+                "text-halo-color": "rgba(0, 0, 0, 1)",
                 "text-halo-width": 1,
-                "text-halo-blur": 1
+                "text-halo-blur": 1,
+                "text-color": "rgba(243, 243, 243, 1)"
             }
         },
         {
@@ -256,18 +260,17 @@
             "layout": {
                 "text-field": "{localization_name}",
                 "text-font": [
-                    "Roboto Medium",
-                    "Noto Sans Bold"
+                    "Roboto Regular",
+                    "Noto Sans Regular"
                 ],
-                "text-letter-spacing": 0.07,
-                "text-size": 12,
+                "text-size": 14,
                 "text-transform": "uppercase"
             },
             "paint": {
-                "text-color": "rgba(116, 177, 243, 1)",
-                "text-halo-color": "rgba(255, 255, 255, 1)",
-                "text-halo-width": 0.3,
-                "text-halo-blur": 0.3
+                "text-halo-color": "rgba(0, 0, 0, 1)",
+                "text-halo-width": 1,
+                "text-halo-blur": 1,
+                "text-color": "rgba(243, 243, 243, 1)"
             },
             "minzoom": 1,
             "maxzoom": 22
@@ -296,16 +299,15 @@
                     "Roboto Medium",
                     "Noto Sans Bold"
                 ],
-                "text-letter-spacing": 0.07,
                 "text-size": 10,
                 "text-max-width": 3,
                 "text-transform": "uppercase"
             },
             "paint": {
-                "text-color": "rgba(116, 177, 243, 1)",
-                "text-halo-color": "rgba(255, 255, 255, 1)",
-                "text-halo-width": 0.3,
-                "text-halo-blur": 0.3
+                "text-halo-color": "rgba(0, 0, 0, 1)",
+                "text-halo-width": 1,
+                "text-halo-blur": 1,
+                "text-color": "rgba(243, 243, 243, 1)"
             },
             "minzoom": 1,
             "maxzoom": 22
@@ -333,13 +335,16 @@
             "layout": {
                 "text-field": "{name}",
                 "text-font": [
-                    "Roboto Light Italic",
-                    "Noto Sans Italic"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ],
                 "text-size": 10
             },
             "paint": {
-                "text-color": "rgba(222, 239, 253, 1)"
+                "text-halo-color": "rgba(0, 0, 0, 1)",
+                "text-halo-width": 1,
+                "text-halo-blur": 1,
+                "text-color": "rgba(243, 243, 243, 1)"
             }
         },
         {
@@ -365,13 +370,16 @@
             "layout": {
                 "text-field": "{name}",
                 "text-font": [
-                    "Roboto Light Italic",
-                    "Noto Sans Italic"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ],
                 "text-size": 10
             },
             "paint": {
-                "text-color": "rgba(222, 239, 253, 1)"
+                "text-halo-color": "rgba(0, 0, 0, 1)",
+                "text-halo-width": 1,
+                "text-halo-blur": 1,
+                "text-color": "rgba(243, 243, 243, 1)"
             }
         },
         {
@@ -400,15 +408,15 @@
                 "text-anchor": "top",
                 "text-size": 11,
                 "text-font": [
-                    "Roboto Regular",
-                    "Noto Sans Regular"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ]
             },
             "paint": {
-                "text-halo-color": "rgba(255, 255, 255, 0.7)",
+                "text-color": "rgba(255, 255, 255, 1)",
                 "text-halo-width": 1,
                 "text-halo-blur": 1,
-                "text-color": "#227936"
+                "text-halo-color": "#227936"
             }
         },
         {
@@ -438,15 +446,15 @@
                 "text-anchor": "top",
                 "text-size": 11,
                 "text-font": [
-                    "Roboto Regular",
-                    "Noto Sans Regular"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ]
             },
             "paint": {
-                "text-halo-color": "rgba(255, 255, 255, 0.7)",
+                "text-color": "rgba(255, 255, 255, 1)",
                 "text-halo-width": 1,
                 "text-halo-blur": 1,
-                "text-color": "#227936"
+                "text-halo-color": "#227936"
             }
         },
         {
@@ -475,15 +483,15 @@
                 "text-anchor": "top",
                 "text-size": 11,
                 "text-font": [
-                    "Roboto Regular",
-                    "Noto Sans Regular"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ]
             },
             "paint": {
-                "text-halo-color": "rgba(255, 255, 255, 0.7)",
+                "text-color": "rgba(255, 255, 255, 1)",
                 "text-halo-width": 1,
                 "text-halo-blur": 1,
-                "text-color": "#227936"
+                "text-halo-color": "#227936"
             }
         },
         {
@@ -535,7 +543,7 @@
                 "text-transform": "uppercase"
             },
             "paint": {
-                "text-color": "#5C5C5C",
+                "text-color": "rgba(37, 40, 40, 1)",
                 "text-halo-color": "rgba(255, 255, 255, 0.7)",
                 "text-halo-width": 1,
                 "text-halo-blur": 1
@@ -604,10 +612,10 @@
                 "icon-size": 0.4
             },
             "paint": {
-                "text-color": "#384646",
-                "text-halo-color": "rgba(255, 255, 255, 0.7)",
+                "text-halo-color": "rgba(0, 0, 0, 1)",
                 "text-halo-width": 1,
-                "text-halo-blur": 1
+                "text-halo-blur": 1,
+                "text-color": "rgba(243, 243, 243, 1)"
             }
         },
         {
@@ -660,10 +668,10 @@
                 "text-letter-spacing": 0.1
             },
             "paint": {
-                "text-color": "#384646",
-                "text-halo-color": "rgba(255, 255, 255, 0.7)",
+                "text-halo-color": "rgba(0, 0, 0, 1)",
                 "text-halo-width": 1,
-                "text-halo-blur": 1
+                "text-halo-blur": 1,
+                "text-color": "rgba(243, 243, 243, 1)"
             }
         },
         {
@@ -711,10 +719,10 @@
                 "icon-size": 0.4
             },
             "paint": {
-                "text-color": "rgba(20, 20, 21, 1)",
-                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-color": "rgba(0, 0, 0, 1)",
                 "text-halo-width": 1,
-                "text-halo-blur": 1
+                "text-halo-blur": 1,
+                "text-color": "rgba(243, 243, 243, 1)"
             }
         },
         {
@@ -745,16 +753,16 @@
             "layout": {
                 "text-field": "{localization_name}",
                 "text-font": [
-                    "Roboto Regular",
-                    "Noto Sans Regular"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ],
                 "text-size": 18
             },
             "paint": {
-                "text-color": "rgba(20, 20, 21, 1)",
-                "text-halo-color": "rgba(255, 255, 255, 1)",
+                "text-halo-color": "rgba(0, 0, 0, 1)",
                 "text-halo-width": 1,
-                "text-halo-blur": 1
+                "text-halo-blur": 1,
+                "text-color": "rgba(243, 243, 243, 1)"
             }
         },
         {
@@ -785,16 +793,16 @@
             "layout": {
                 "text-field": "{localization_name}",
                 "text-font": [
-                    "Roboto Regular",
-                    "Noto Sans Regular"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ],
                 "text-size": 14
             },
             "paint": {
-                "text-color": "rgba(20, 20, 21, 1)",
-                "text-halo-color": "rgba(255, 255, 255, 0.7)",
+                "text-halo-color": "rgba(0, 0, 0, 1)",
                 "text-halo-width": 1,
-                "text-halo-blur": 1
+                "text-halo-blur": 1,
+                "text-color": "rgba(243, 243, 243, 1)"
             }
         },
         {
@@ -820,8 +828,8 @@
             "layout": {
                 "symbol-placement": "line",
                 "text-font": [
-                    "Roboto Regular",
-                    "Noto Sans Regular"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ],
                 "text-field": "{name}",
                 "text-size": 10
@@ -2064,9 +2072,9 @@
                 }
             },
             "paint": {
-                "text-color": "rgba(195, 95, 20, 1)",
+                "text-halo-color": "rgba(195, 95, 20, 1)",
                 "text-halo-width": 1,
-                "text-halo-color": "rgba(255, 255, 255, 0.8)",
+                "text-color": "rgba(255, 255, 255, 1)",
                 "text-halo-blur": 1
             }
         },
@@ -2187,8 +2195,8 @@
                 },
                 "text-size": 10,
                 "text-font": [
-                    "Roboto Regular",
-                    "Noto Sans Regular"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ],
                 "text-anchor": "top",
                 "text-justify": "center",
@@ -2201,7 +2209,8 @@
             },
             "paint": {
                 "text-translate-anchor": "map",
-                "text-color": "rgba(96, 64, 52, 1)"
+                "text-color": "rgba(255, 255, 255, 1)",
+                "text-halo-color": "rgba(96, 64, 52, 1)"
             }
         },
         {
@@ -2255,15 +2264,15 @@
                 "text-anchor": "top",
                 "text-size": 10,
                 "text-font": [
-                    "Roboto Regular",
-                    "Noto Sans Regular"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ]
             },
             "paint": {
-                "text-halo-color": "rgba(255, 255, 255, .7)",
+                "text-halo-color": "#3B45A0",
+                "text-color": "rgba(255, 255, 255, 1)",
                 "text-halo-width": 1,
-                "text-halo-blur": 1,
-                "text-color": "#3B45A0"
+                "text-halo-blur": 1
             }
         },
         {
@@ -2292,15 +2301,15 @@
                 "text-anchor": "top",
                 "text-size": 11,
                 "text-font": [
-                    "Roboto Regular",
-                    "Noto Sans Regular"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ]
             },
             "paint": {
-                "text-halo-color": "rgba(255, 255, 255, .7)",
+                "text-color": "rgba(255, 255, 255, 1)",
                 "text-halo-width": 1,
                 "text-halo-blur": 1,
-                "text-color": "#3B45A0"
+                "text-halo-color": "#3B45A0"
             }
         },
         {
@@ -2329,15 +2338,15 @@
                 "text-anchor": "top",
                 "text-size": 11,
                 "text-font": [
-                    "Roboto Regular",
-                    "Noto Sans Regular"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ]
             },
             "paint": {
-                "text-halo-color": "rgba(255, 255, 255, .7)",
+                "text-color": "rgba(255, 255, 255, 1)",
                 "text-halo-width": 1,
                 "text-halo-blur": 1,
-                "text-color": "#3B45A0"
+                "text-halo-color": "#3B45A0"
             }
         },
         {
@@ -2366,15 +2375,15 @@
                 "text-anchor": "top",
                 "text-size": 11,
                 "text-font": [
-                    "Roboto Regular",
-                    "Noto Sans Regular"
+                    "Roboto Medium",
+                    "Noto Sans Bold"
                 ]
             },
             "paint": {
-                "text-halo-color": "rgba(255, 255, 255, .7)",
+                "text-color": "rgba(255, 255, 255, 1)",
                 "text-halo-width": 1,
                 "text-halo-blur": 1,
-                "text-color": "#3B45A0"
+                "text-halo-color": "#3B45A0"
             }
         },
         {
@@ -2401,17 +2410,17 @@
                     0.8
                 ],
                 "text-anchor": "top",
-                "text-size": 11,
+                "text-size": 10,
                 "text-font": [
                     "Roboto Medium",
                     "Noto Sans Bold"
                 ]
             },
             "paint": {
-                "text-halo-color": "rgba(255, 255, 255, 0.8)",
+                "text-halo-color": "rgba(210, 30, 30, 0.8)",
                 "text-halo-width": 1,
                 "text-halo-blur": 1,
-                "text-color": "rgba(236, 137, 141, 1)"
+                "text-color": "rgba(255, 255, 255, 1)"
             }
         }
     ]
