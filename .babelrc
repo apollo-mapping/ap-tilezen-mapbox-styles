@@ -2,7 +2,8 @@
     "presets": [
         "es2015",
         "stage-0",
-        "react"
+        "react",
+        "react-app"
     ],
     "plugins": [
         "add-module-exports",
