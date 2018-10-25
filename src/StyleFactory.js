@@ -9,6 +9,19 @@ export const APOLLO_HYBRID_SATELLITE_STYLE = require('./styles/apollo-hybrid-sat
 // (which was very incomplete and didn't work with latest mapbox verseion)
 export const ZEN_STYLE = require('./styles/zen.json');
 
+if(!String.prototype.endsWith) {
+    String.prototype.endsWith = function(searchString, position) {
+	var subjectString = this.toString();
+	if (typeof position !== 'number' || !isFinite(position) || Math.floor(position) !== position
+	    || position > subjectString.length) {
+	   position = subjectString.length;
+	}
+	position -= searchString.length;
+	var lastIndex = subjectString.lastIndexOf(searchString, position);
+	return lastIndex !== -1 && lastIndex === position;
+    }
+}
+
 export class StyleFactory {
     tileUrl: string = "";
     resourceUrl: string = "";
