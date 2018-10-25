@@ -4,39 +4,12 @@ export const TONER_STYLE = require('./styles/toner.json');
 export const SATELLITE_STYLE = require('./styles/satellite-raster.json');
 export const APOLLO_HYBRID_SATELLITE_STYLE = require('./styles/apollo-hybrid-satellite.json');
 
+import babelPolyfill from 'babel-polyfill';
+
 // the zen style is a continuation of the style by mapzen found here:
 // https://github.com/mapzen/mapboxgl-vector-tiles
 // (which was very incomplete and didn't work with latest mapbox verseion)
 export const ZEN_STYLE = require('./styles/zen.json');
-
-if(!String.prototype.endsWith) {
-    String.prototype.endsWith = function(searchString, position) {
-	var subjectString = this.toString();
-	if (typeof position !== 'number' || !isFinite(position) || Math.floor(position) !== position
-	    || position > subjectString.length) {
-	   position = subjectString.length;
-	}
-	position -= searchString.length;
-	var lastIndex = subjectString.lastIndexOf(searchString, position);
-	return lastIndex !== -1 && lastIndex === position;
-    }
-}
-
-if (!String.prototype.includes) {
-    Object.defineProperty(String.prototype, 'includes', {
-        value: function (search, start) {
-            if (typeof start !== 'number') {
-                start = 0
-            }
-
-            if (start + search.length > this.length) {
-                return false
-            } else {
-                return this.indexOf(search, start) !== -1
-            }
-        }
-    })
-}
 
 export class StyleFactory {
     tileUrl: string = "";
