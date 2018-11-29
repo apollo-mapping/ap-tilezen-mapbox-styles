@@ -343,8 +343,6 @@
                 },
                 "line-gap-width": 3
             },
-            "line-join": "round",
-            "line-cap": "round",
             "minzoom": 12
         },
         {
