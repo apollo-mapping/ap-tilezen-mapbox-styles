@@ -3,6 +3,7 @@ export const APOLLO_BRIGHT_STYLE = require('./styles/apollo-bright.json');
 export const TONER_STYLE = require('./styles/toner.json');
 export const SATELLITE_STYLE = require('./styles/satellite-raster.json');
 export const APOLLO_HYBRID_SATELLITE_STYLE = require('./styles/apollo-hybrid-satellite.json');
+export const NATURAL_WORLD_STYLE = require('./styles/natural-world.json');
 
 // the zen style is a continuation of the style by mapzen found here:
 // https://github.com/mapzen/mapboxgl-vector-tiles
