@@ -14,7 +14,9 @@
             "maxzoom": 5,
             "tileSize": 512,
             "tiles": [
-                "https://s3-us-west-1.amazonaws.com/osm-vector-tiles-apollomapping/raster/natural-earth-2/{z}/{x}/{y}.png"
+                "https://a.basemap.mapmavin.com/natural-earth-2/{z}/{x}/{y}.png",
+                "https://b.basemap.mapmavin.com/natural-earth-2/{z}/{x}/{y}.png",
+                "https://c.basemap.mapmavin.com/natural-earth-2/{z}/{x}/{y}.png"
             ],
             "type": "raster"
         }
@@ -660,8 +662,6 @@
                     2
                 ]
             },
-            "line-join": "round",
-            "line-cap": "round",
             "minzoom": 12
         },
         {
